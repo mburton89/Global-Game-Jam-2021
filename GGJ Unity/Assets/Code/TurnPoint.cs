@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class TurnPoint : MonoBehaviour
 {
-    public enum Direction
-    {
-        down,
-        left,
-        right
-    }
+    public int xDir;
+    public int yDir;
 }
