@@ -8,11 +8,12 @@ public class Zombie : MonoBehaviour
     public int xDir;
     public int yDir;
     public float initialHealth;
-    public float currentHealth;
+    float currentHealth;
     private Vector3 walkDirection;
 
     private void Start()
     {
+        currentHealth = initialHealth;
         walkDirection = new Vector3(-1, 0, 0);
     }
     private void Update()
@@ -42,8 +43,18 @@ public class Zombie : MonoBehaviour
         transform.Translate(walkDirection * walkSpeed * Time.deltaTime);
     }
 
+    public void TakeDamage(float damageToTake)
+    {
+        currentHealth = currentHealth - damageToTake;
+
+        if (currentHealth <= 0)
+        {
+            Splode();
+        }
+    }
+
     public void Splode()
     {
-
+        Destroy(gameObject);
     }
 }
