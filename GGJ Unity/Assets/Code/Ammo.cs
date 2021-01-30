@@ -10,6 +10,10 @@ public class Ammo : MonoBehaviour
     public float damageToGive;
     public int uses;
     public bool canImpale;
+    private bool _canGiveDamage;
+
+    public Sprite destroyedSprite;
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -17,17 +21,28 @@ public class Ammo : MonoBehaviour
         {
             collider.isTrigger = true;
         }
-
+        _canGiveDamage = true;
         rigidbody2D.mass = mass;
     }
+
+    //Make it so things that impale can still give damage after they hit something
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
-            zombie.TakeDamage(damageToGive);
+            if (_canGiveDamage)
+            {
+                zombie.TakeDamage(damageToGive);
+                GameSoundManager.Instance.ItemHit.Play();
+            }
             DecrementUses();
+
+            if (destroyedSprite != null)
+            {
+                spriteRenderer.sprite = destroyedSprite;
+            }
         }
     }
 
@@ -36,13 +51,26 @@ public class Ammo : MonoBehaviour
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
-            zombie.TakeDamage(damageToGive);
+            if (_canGiveDamage)
+            {
+                zombie.TakeDamage(damageToGive);
+                GameSoundManager.Instance.ItemHit.Play();
+            }
             DecrementUses();
+
+            if (destroyedSprite != null)
+            {
+                spriteRenderer.sprite = destroyedSprite;
+            }
         }
     }
 
     void DecrementUses()
     {
+        if (!canImpale)
+        {
+            _canGiveDamage = false;
+        }
         uses--;
         if (uses <= 0)
         {

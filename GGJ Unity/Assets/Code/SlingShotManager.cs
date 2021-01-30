@@ -53,6 +53,10 @@ public class SlingShotManager : MonoBehaviour
 
     public void SlingAmmo()
     {
+        GameSoundManager.Instance.SlingRelease.Play();
+        //randomizer
+        _ammoIndex = Random.Range(0, ammos.Count);
+
         GameObject currentAmmo = ammos[_ammoIndex];
 
         ObjectHolder.GetComponent<Collider2D>().enabled = false;
@@ -62,6 +66,6 @@ public class SlingShotManager : MonoBehaviour
         clone.GetComponent<Rigidbody2D>().AddForce(aimer.up * speed, ForceMode2D.Impulse);
         Destroy(clone, 30f);
 
-        _ammoIndex++;
+        //_ammoIndex++;
     }
 }
