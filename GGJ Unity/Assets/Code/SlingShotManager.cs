@@ -53,6 +53,7 @@ public class SlingShotManager : MonoBehaviour
 
     public void SlingAmmo()
     {
+        GameSoundManager.Instance.SlingRelease.Play();
         //randomizer
         _ammoIndex = Random.Range(0, ammos.Count);
 

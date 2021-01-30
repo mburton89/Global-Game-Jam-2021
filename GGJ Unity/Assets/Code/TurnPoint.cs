@@ -6,4 +6,9 @@ public class TurnPoint : MonoBehaviour
 {
     public int xDir;
     public int yDir;
+
+    private void Start()
+    {
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+    }
 }

@@ -25,6 +25,8 @@ public class Ammo : MonoBehaviour
         rigidbody2D.mass = mass;
     }
 
+    //Make it so things that impale can still give damage after they hit something
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Zombie>())
@@ -33,6 +35,7 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
+                GameSoundManager.Instance.ItemHit.Play();
             }
             DecrementUses();
 
@@ -51,6 +54,7 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
+                GameSoundManager.Instance.ItemHit.Play();
             }
             DecrementUses();
 
@@ -63,7 +67,10 @@ public class Ammo : MonoBehaviour
 
     void DecrementUses()
     {
-        _canGiveDamage = false;
+        if (!canImpale)
+        {
+            _canGiveDamage = false;
+        }
         uses--;
         if (uses <= 0)
         {
