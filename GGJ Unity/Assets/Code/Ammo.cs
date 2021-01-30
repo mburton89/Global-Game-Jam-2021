@@ -10,6 +10,10 @@ public class Ammo : MonoBehaviour
     public float damageToGive;
     public int uses;
     public bool canImpale;
+    private bool _canGiveDamage;
+
+    public Sprite destroyedSprite;
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {
@@ -17,7 +21,7 @@ public class Ammo : MonoBehaviour
         {
             collider.isTrigger = true;
         }
-
+        _canGiveDamage = true;
         rigidbody2D.mass = mass;
     }
 
@@ -26,8 +30,16 @@ public class Ammo : MonoBehaviour
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
-            zombie.TakeDamage(damageToGive);
+            if (_canGiveDamage)
+            {
+                zombie.TakeDamage(damageToGive);
+            }
             DecrementUses();
+
+            if (destroyedSprite != null)
+            {
+                spriteRenderer.sprite = destroyedSprite;
+            }
         }
     }
 
@@ -36,13 +48,22 @@ public class Ammo : MonoBehaviour
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
-            zombie.TakeDamage(damageToGive);
+            if (_canGiveDamage)
+            {
+                zombie.TakeDamage(damageToGive);
+            }
             DecrementUses();
+
+            if (destroyedSprite != null)
+            {
+                spriteRenderer.sprite = destroyedSprite;
+            }
         }
     }
 
     void DecrementUses()
     {
+        _canGiveDamage = false;
         uses--;
         if (uses <= 0)
         {
