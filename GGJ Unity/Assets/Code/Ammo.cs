@@ -15,6 +15,30 @@ public class Ammo : MonoBehaviour
     public Sprite destroyedSprite;
     public SpriteRenderer spriteRenderer;
 
+    public enum AmmoType
+    {
+        WaterBottle,
+        Wallet,
+        Pencil,
+        Phone,
+        Glasses,
+        Umbrella,
+        ID,
+        Keys,
+        Eraser,
+        Mug,
+        Child,
+        Globe,
+        Book,
+        Plant,
+        Thermus,
+        Calculator,
+        Knife,
+        Scissors
+    }
+
+    public AmmoType ammoType;
+
     void Start()
     {
         if (canImpale)

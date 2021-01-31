@@ -6,8 +6,9 @@ public class SlingShotManager : MonoBehaviour
 {
     public GameObject ball;
 
-    public List<GameObject> ammos;
+    public List<Ammo> ammos;
     private int _ammoIndex = 0;
+    public Ammo nextAmmo;
 
     public Transform leftAnchor;
     public Transform rightAnchor;
@@ -28,6 +29,8 @@ public class SlingShotManager : MonoBehaviour
         lines[0].SetPosition(0, leftAnchor.position);
         lines[1].SetPosition(0, rightAnchor.position);
         setPath(true);
+
+        DetermineNextAmmo();
     }
 
     void Update()
@@ -40,7 +43,7 @@ public class SlingShotManager : MonoBehaviour
 
     public void setPath(bool b)
     {
-        float yPos = (aimer.up.y * 2.5f) / points.Length;
+        float yPos = (aimer.up.y * 1.1f) / points.Length;
         float val = yPos;
         for (int i = 0; i < points.Length; i++)
         {
@@ -55,17 +58,24 @@ public class SlingShotManager : MonoBehaviour
     {
         GameSoundManager.Instance.SlingRelease.Play();
         //randomizer
-        _ammoIndex = Random.Range(0, ammos.Count);
+        //_ammoIndex = Random.Range(0, ammos.Count);
 
-        GameObject currentAmmo = ammos[_ammoIndex];
+        //Ammo currentAmmo = Ammo currentAmmo = ammos[_ammoIndex];
 
         ObjectHolder.GetComponent<Collider2D>().enabled = false;
         //GameObject clone = Instantiate(ball, ball.transform.position, Quaternion.identity) as GameObject;
-        GameObject clone = Instantiate(currentAmmo, currentAmmo.transform.position, Quaternion.identity) as GameObject;
-        clone.SetActive(true);
+        Ammo clone = Instantiate(nextAmmo, nextAmmo.transform.position, Quaternion.identity) as Ammo;
         clone.GetComponent<Rigidbody2D>().AddForce(aimer.up * speed, ForceMode2D.Impulse);
         Destroy(clone, 30f);
 
         //_ammoIndex++;
+        DetermineNextAmmo();
+    }
+
+    void DetermineNextAmmo()
+    {
+        _ammoIndex = Random.Range(0, ammos.Count);
+        nextAmmo = ammos[_ammoIndex];
+        CurrentAmmoNote.Instance.UpdateUI(nextAmmo.ammoType);
     }
 }

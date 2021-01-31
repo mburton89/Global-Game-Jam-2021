@@ -1,7 +1,133 @@
 fileFormatVersion: 2
 guid: 1b9b9d35ee9e10449974aacf98c4620e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2408944588958505774
+    second: ZAMH_currentitem_0
+  - first:
+      213: 3249936291367551343
+    second: ZAMH_currentitem_1
+  - first:
+      213: -7415860935888011283
+    second: ZAMH_currentitem_2
+  - first:
+      213: 4525930829425189236
+    second: ZAMH_currentitem_3
+  - first:
+      213: 4628291696972274022
+    second: ZAMH_currentitem_4
+  - first:
+      213: 2637045730553761215
+    second: ZAMH_currentitem_5
+  - first:
+      213: -4939988245768372182
+    second: ZAMH_currentitem_6
+  - first:
+      213: 2089840685171254560
+    second: ZAMH_currentitem_7
+  - first:
+      213: -1451186539661899624
+    second: ZAMH_currentitem_8
+  - first:
+      213: 4774844896846415869
+    second: ZAMH_currentitem_9
+  - first:
+      213: 2572324688175577864
+    second: ZAMH_currentitem_10
+  - first:
+      213: 5426049617683520971
+    second: ZAMH_currentitem_11
+  - first:
+      213: 3520220491118724078
+    second: ZAMH_currentitem_12
+  - first:
+      213: -2130326058717337483
+    second: ZAMH_currentitem_13
+  - first:
+      213: 3726577455487078292
+    second: ZAMH_currentitem_14
+  - first:
+      213: 5950332462888797424
+    second: ZAMH_currentitem_15
+  - first:
+      213: 3226260666837160617
+    second: ZAMH_currentitem_16
+  - first:
+      213: -4164803622422039030
+    second: ZAMH_currentitem_17
+  - first:
+      213: -7861077892004154952
+    second: ZAMH_currentitem_18
+  - first:
+      213: 6404103986091092340
+    second: ZAMH_currentitem_19
+  - first:
+      213: 6118624435169036633
+    second: ZAMH_currentitem_20
+  - first:
+      213: -4938823713147449321
+    second: ZAMH_currentitem_21
+  - first:
+      213: 8811841812970432581
+    second: ZAMH_currentitem_0
+  - first:
+      213: 1589391536228272622
+    second: ZAMH_currentitem_1
+  - first:
+      213: 712973375180177388
+    second: ZAMH_currentitem_2
+  - first:
+      213: 6086721139517223846
+    second: ZAMH_currentitem_3
+  - first:
+      213: -7891678422381108896
+    second: ZAMH_currentitem_4
+  - first:
+      213: -199772541614198293
+    second: ZAMH_currentitem_5
+  - first:
+      213: -6014659683069872276
+    second: ZAMH_currentitem_6
+  - first:
+      213: 1637381740392305082
+    second: ZAMH_currentitem_7
+  - first:
+      213: -5664067520961835401
+    second: ZAMH_currentitem_8
+  - first:
+      213: -5380026473820991144
+    second: ZAMH_currentitem_9
+  - first:
+      213: -6048206370950397091
+    second: ZAMH_currentitem_10
+  - first:
+      213: 5367877850565447076
+    second: ZAMH_currentitem_11
+  - first:
+      213: -314695425065647431
+    second: ZAMH_currentitem_12
+  - first:
+      213: -6785990480877711455
+    second: ZAMH_currentitem_13
+  - first:
+      213: 3989592969787624611
+    second: ZAMH_currentitem_14
+  - first:
+      213: 816614649992599531
+    second: ZAMH_currentitem_18
+  - first:
+      213: -531430077402237816
+    second: ZAMH_currentitem_19
+  - first:
+      213: 3463721037185047915
+    second: ZAMH_currentitem_20
+  - first:
+      213: 5241730990105934439
+    second: ZAMH_currentitem_22
+  - first:
+      213: 7288067522143474600
+    second: ZAMH_currentitem_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +167,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -73,9 +199,489 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ZAMH_currentitem_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 690
+        width: 283
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54869071173f94a70800000000000000
+      internalID: 8811841812970432581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 817
+        width: 88
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee906e56e27ae0610800000000000000
+      internalID: 1589391536228272622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_2
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 819
+        width: 143
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceffce9d18df4e900800000000000000
+      internalID: 712973375180177388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 794
+        width: 146
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3f8c7a0a0687450800000000000000
+      internalID: 6086721139517223846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_4
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 665
+        width: 107
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061eb5869402b7290800000000000000
+      internalID: -7891678422381108896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_5
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 647
+        width: 189
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1753d8ee34a3df0800000000000000
+      internalID: -199772541614198293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_6
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 448
+        width: 143
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67b1c1a2e2a78ca0800000000000000
+      internalID: -6014659683069872276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_7
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 577
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab15bc5840629b610800000000000000
+      internalID: 1637381740392305082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_8
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 450
+        width: 149
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e0e3569903561b0800000000000000
+      internalID: -5664067520961835401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_9
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 429
+        width: 162
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851d3b93d6e4655b0800000000000000
+      internalID: -5380026473820991144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_10
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 398
+        width: 102
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d534f33b954701ca0800000000000000
+      internalID: -6048206370950397091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_11
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 363
+        width: 115
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad04a007788e7a40800000000000000
+      internalID: 5367877850565447076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_12
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 261
+        width: 108
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b28580ad2af1abf0800000000000000
+      internalID: -314695425065647431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_13
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 291
+        width: 102
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1af0a128c9153d1a0800000000000000
+      internalID: -6785990480877711455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_14
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 283
+        width: 110
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac46921ba1ed5730800000000000000
+      internalID: 3989592969787624611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_19
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 147
+        width: 101
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8843b75092bff98f0800000000000000
+      internalID: -531430077402237816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 115
+        width: 85
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d56768eeb911030800000000000000
+      internalID: 3463721037185047915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_15
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 185
+        width: 112
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f446f949d3d39250800000000000000
+      internalID: 5950332462888797424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_21
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 66
+        width: 115
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7101299fff5c57bb0800000000000000
+      internalID: -4938823713147449321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_22
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 64
+        width: 123
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76abb69409e5eb840800000000000000
+      internalID: 5241730990105934439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
