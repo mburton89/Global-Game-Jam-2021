@@ -55,6 +55,7 @@ public class Zombie : MonoBehaviour
 
     public void Splode()
     {
+        ScoreManager.Instance.AddPoint();
         GameSoundManager.Instance.ZombieSplode.Play();
         Destroy(gameObject);
     }
