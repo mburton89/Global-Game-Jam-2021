@@ -14,6 +14,13 @@ public class GameSoundManager : MonoBehaviour
     public AudioSource ZombieSpawn;
     public AudioSource ZombieSplode;
     public AudioSource SchoolBell;
+    public AudioSource StickInWall;
+    public AudioSource ChaCHING;
+    public AudioSource EraserPoof;
+    public AudioSource WaterSplode;
+    public AudioSource Splode;
+
+    public AudioSource Music;
 
     private void Awake()
     {

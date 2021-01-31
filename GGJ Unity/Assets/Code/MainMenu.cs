@@ -11,10 +11,11 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.SetInt("Wave", 1);
     }
     public void Play()
     {
         buttonClick.Play();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
         StartCoroutine(nameof(ShowSlingSpriteCo));
     }
 
+    public void ShowIdle()
+    {
+        spriteRenderer.sprite = idle;
+    }
+
     private IEnumerator ShowSlingSpriteCo()
     {
         spriteRenderer.sprite = sling;
