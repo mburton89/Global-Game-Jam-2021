@@ -67,7 +67,7 @@ public class SlingShotManager : MonoBehaviour
         Ammo clone = Instantiate(nextAmmo, nextAmmo.transform.position, Quaternion.identity) as Ammo;
         clone.GetComponent<Rigidbody2D>().AddForce(aimer.up * speed, ForceMode2D.Impulse);
         //clone.transform.eulerAngles = aimer.up;
-        print(aimer.up);
+        //print(aimer.up);
 
         if (aimer.up.x < -0.3)
         {

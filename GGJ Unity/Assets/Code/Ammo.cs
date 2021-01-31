@@ -16,6 +16,9 @@ public class Ammo : MonoBehaviour
     public Sprite destroyedSprite;
     public SpriteRenderer spriteRenderer;
 
+    private int _zombiesHit;
+    //public DollarSplode dollarSplodePrefab;
+
     public enum AmmoType
     {
         WaterBottle,
@@ -55,24 +58,22 @@ public class Ammo : MonoBehaviour
         rigidbody2D.mass = mass;
         float windMultiplier = windResistance * 40;
         windResistance = Random.Range(-windMultiplier, windMultiplier);
+        _zombiesHit = 0;
     }
 
-   // Vector3 previousPos = new Vector3();
     private void Update()
     {
-        if (ammoType == AmmoType.ID)
+        if (rigidbody2D != null)
         {
-            rigidbody2D.AddTorque(38);
+            if (ammoType == AmmoType.ID)
+            {
+                rigidbody2D.AddTorque(38);
+            }
+            if (_canGiveDamage)
+            {
+                rigidbody2D.AddForce(new Vector2(windResistance, 0));
+            }
         }
-        if (_canGiveDamage)
-        {
-            rigidbody2D.AddForce(new Vector2(windResistance, 0));
-        }
-        //transform.rotation = Quaternion.LookRotation(new Vector3(0 ,0, rigidbody2D.velocity.x));
-        //Vector3 relativePos = previousPos - transform.position;
-        //Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.forward);
-        //transform.rotation = rotation;
-        //previousPos = transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -83,7 +84,8 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
-                GameSoundManager.Instance.ItemHit.Play();
+                PlayHitSoundAndExplode();
+                _zombiesHit++;
             }
             DecrementUses();
 
@@ -91,6 +93,25 @@ public class Ammo : MonoBehaviour
             {
                 spriteRenderer.sprite = destroyedSprite;
             }
+        }
+
+        if (collision.gameObject.tag == "wall")
+        {
+            if (canImpale)
+            {
+                Destroy(rigidbody2D);
+                _canGiveDamage = false;
+                GameSoundManager.Instance.StickInWall.Play();
+            }
+        }
+
+        if (_zombiesHit == 2)
+        {
+            ReportCard.Instance.ShowDoubleKill();
+        }
+        else if (_zombiesHit == 3)
+        {
+            ReportCard.Instance.ShowTripleKill();
         }
     }
 
@@ -102,7 +123,7 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
-                GameSoundManager.Instance.ItemHit.Play();
+                PlayHitSoundAndExplode();
             }
             DecrementUses();
 
@@ -110,7 +131,16 @@ public class Ammo : MonoBehaviour
             {
                 spriteRenderer.sprite = destroyedSprite;
             }
+
         }
+
+        if (collision.gameObject.tag == "wall")
+        {
+            _canGiveDamage = false;
+        }
+
+        rigidbody2D.drag = rigidbody2D.drag * 30;
+        rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
     }
 
     void DecrementUses()
@@ -123,6 +153,33 @@ public class Ammo : MonoBehaviour
         if (uses <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    void PlayHitSoundAndExplode()
+    {
+        if (ammoType == AmmoType.WaterBottle || ammoType == AmmoType.Thermus)
+        {
+            GameSoundManager.Instance.WaterSplode.Play();
+            Instantiate(Resources.Load("Water2") as GameObject, transform.position, transform.rotation, null);
+            ReportCard.Instance.ShowWaterSplode();
+        }
+        else if (ammoType == AmmoType.Wallet)
+        {
+            GameSoundManager.Instance.ChaCHING.Play();
+            //Instantiate(Resources.Load("MoneyExplosion") as GameObject, transform.position, transform.rotation, null);
+            DollarSplode dollarSplode = Instantiate(Resources.Load("DollarSplode"), transform.position, transform.rotation, null) as DollarSplode;
+            //Destroy(dollarSplode.gameObject, 3);
+            ReportCard.Instance.ShowChaching();
+        }
+        else if (ammoType == AmmoType.Eraser)
+        {
+            GameSoundManager.Instance.EraserPoof.Play();
+            ReportCard.Instance.Lol();
+        }
+        else
+        {
+            GameSoundManager.Instance.ItemHit.Play();
         }
     }
 }

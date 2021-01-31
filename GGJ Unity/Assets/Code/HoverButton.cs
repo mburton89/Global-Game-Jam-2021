@@ -24,6 +24,9 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        HoverEffect.SetActive(false);
+        if (HoverEffect != null)
+        {
+            HoverEffect.SetActive(false);
+        }
     }
 }

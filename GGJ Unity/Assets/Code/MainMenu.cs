@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.SetInt("Wave", 1);
     }
     public void Play()
     {

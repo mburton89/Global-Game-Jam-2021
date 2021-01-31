@@ -36,6 +36,11 @@ public class Zombie : MonoBehaviour
             TurnPoint turnPoint = collision.gameObject.GetComponent<TurnPoint>();
             walkDirection = new Vector3(turnPoint.xDir, turnPoint.yDir, 0);
         }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void Walk()
@@ -57,6 +62,9 @@ public class Zombie : MonoBehaviour
     {
         ScoreManager.Instance.AddPoint();
         GameSoundManager.Instance.ZombieSplode.Play();
+        GameSoundManager.Instance.Splode.Play();
         Destroy(gameObject);
+        Instantiate(Resources.Load("Explosion") as GameObject, transform.position, transform.rotation, null);
+        Instantiate(Resources.Load("BloodSplash 1") as GameObject, transform.position, transform.rotation, null);
     }
 }
