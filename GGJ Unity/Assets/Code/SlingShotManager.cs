@@ -70,6 +70,8 @@ public class SlingShotManager : MonoBehaviour
 
         //_ammoIndex++;
         DetermineNextAmmo();
+
+        Player.Instance.ShowSlingSprite();
     }
 
     void DetermineNextAmmo()
