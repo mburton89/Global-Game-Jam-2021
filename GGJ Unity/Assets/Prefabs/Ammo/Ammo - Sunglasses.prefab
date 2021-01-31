@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6819748909092323156}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.34, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
@@ -136,10 +136,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 6819748909092323152}
   collider: {fileID: 6819748909092323153}
-  mass: 0.5
-  damageToGive: 11
+  mass: 0.8
+  damageToGive: 0.5
   uses: 5
   canImpale: 0
+  windResistance: 0.05
   destroyedSprite: {fileID: 21300000, guid: 7518876986ca8874689365d550a52d63, type: 3}
   spriteRenderer: {fileID: 6819748910475318328}
   ammoType: 4

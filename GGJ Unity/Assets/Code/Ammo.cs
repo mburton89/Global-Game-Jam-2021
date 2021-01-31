@@ -11,6 +11,7 @@ public class Ammo : MonoBehaviour
     public int uses;
     public bool canImpale;
     private bool _canGiveDamage;
+    public float windResistance;
 
     public Sprite destroyedSprite;
     public SpriteRenderer spriteRenderer;
@@ -44,12 +45,35 @@ public class Ammo : MonoBehaviour
         if (canImpale)
         {
             collider.isTrigger = true;
+
+        }
+        else
+        {
+            rigidbody2D.AddTorque(Random.Range(4, 12));
         }
         _canGiveDamage = true;
         rigidbody2D.mass = mass;
+        float windMultiplier = windResistance * 40;
+        windResistance = Random.Range(-windMultiplier, windMultiplier);
     }
 
-    //Make it so things that impale can still give damage after they hit something
+   // Vector3 previousPos = new Vector3();
+    private void Update()
+    {
+        if (ammoType == AmmoType.ID)
+        {
+            rigidbody2D.AddTorque(38);
+        }
+        if (_canGiveDamage)
+        {
+            rigidbody2D.AddForce(new Vector2(windResistance, 0));
+        }
+        //transform.rotation = Quaternion.LookRotation(new Vector3(0 ,0, rigidbody2D.velocity.x));
+        //Vector3 relativePos = previousPos - transform.position;
+        //Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.forward);
+        //transform.rotation = rotation;
+        //previousPos = transform.position;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -131,8 +131,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   xDir: -1
   yDir: 0
-  initialHealth: 10
-  currentHealth: 10
+  initialHealth: 1
 --- !u!50 &1858757035309734403
 Rigidbody2D:
   serializedVersion: 4

@@ -66,7 +66,18 @@ public class SlingShotManager : MonoBehaviour
         //GameObject clone = Instantiate(ball, ball.transform.position, Quaternion.identity) as GameObject;
         Ammo clone = Instantiate(nextAmmo, nextAmmo.transform.position, Quaternion.identity) as Ammo;
         clone.GetComponent<Rigidbody2D>().AddForce(aimer.up * speed, ForceMode2D.Impulse);
-        Destroy(clone, 30f);
+        //clone.transform.eulerAngles = aimer.up;
+        print(aimer.up);
+
+        if (aimer.up.x < -0.3)
+        {
+            clone.transform.eulerAngles = new Vector3(0, 0, 22);
+        }
+        else if(aimer.up.x > 0.3)
+        {
+            clone.transform.eulerAngles = new Vector3(0, 0, -22);
+        }
+        Destroy(clone.gameObject, 3f);
 
         //_ammoIndex++;
         DetermineNextAmmo();
