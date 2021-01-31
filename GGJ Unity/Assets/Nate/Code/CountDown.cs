@@ -1,30 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CountDown : MonoBehaviour
 {
-        //private Text textClock;
+        private TextMeshProUGUI textClock;
 
         private float countdownTimerDuration;
         private float countdownTimerStartTime;
 
         void Start()
         {
-            //textClock = GetComponent<Text>();
-            CountdownTimerReset(30);
+            textClock = GetComponent<TextMeshProUGUI>();
+            CountdownTimerReset(5);
         }
 
         void Update()
         {
             // default - timer finished
-            string timerMessage = "countdown has finished";
+            string timerMessage = "GET READY";
             int timeLeft = (int)CountdownTimerSecondsRemaining();
 
             if (timeLeft > 0)
-                timerMessage = "Countdown seconds remaining = " + LeadingZero(timeLeft);
+                timerMessage = LeadingZero(timeLeft);
 
-            // textClock.text = timerMessage;
+            textClock.text = timerMessage;
+            
         }
 
         private void CountdownTimerReset(float delayInSeconds)

@@ -29,6 +29,8 @@ public class Items : MonoBehaviour
         Thermos,
         Calculator,
         Child,
+        Scissors,
+        Knife,
     }
     public ItemType itemType;
 
@@ -145,6 +147,18 @@ public class Items : MonoBehaviour
         else if (itemType == ItemType.Child)
         {
             Weight = 3.0f;
+            Durability = 1;
+            IsReusable = false;
+        }
+        else if (itemType == ItemType.Scissors)
+        {
+            Weight = 1.0f;
+            Durability = 1;
+            IsReusable = false;
+        }
+        else if (itemType == ItemType.Knife)
+        {
+            Weight = .5f;
             Durability = 1;
             IsReusable = false;
         }
