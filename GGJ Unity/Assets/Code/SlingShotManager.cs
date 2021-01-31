@@ -77,7 +77,7 @@ public class SlingShotManager : MonoBehaviour
         {
             clone.transform.eulerAngles = new Vector3(0, 0, -22);
         }
-        Destroy(clone.gameObject, 3f);
+        Destroy(clone.gameObject, 2.5f);
 
         //_ammoIndex++;
         DetermineNextAmmo();
