@@ -34,10 +34,10 @@ public class CurrentAmmoNote : MonoBehaviour
     private const string WALLET_NOTES = "WALLET: Make it rain! Cha CHING SPLODE";
     private const string PENCIL_NOTES = "PENCIL: Pokes thru zombies";
     private const string PHONE_NOTES = "PHONE: Hey, no phones in class";
-    private const string GLASSES_NOTES = "GLASSES: Not the best ammo";
+    private const string GLASSES_NOTES = "Zombies CAN'T SEE!.. But look cool :D";
     private const string UMBRELLA_NOTES = "UMBRELLA: Impales Zombies! ombies! ombies! eh. eh. eh.";
     private const string ID_NOTES = "ID: Slices thru Zombies! Catches Wind!";
-    private const string KEYS_NOTES = "KEYS: Not a key ammo type";
+    private const string KEYS_NOTES = "KEYS: Slows 'em down";
     private const string ERASER_NOTES = "BOARD ERASER: Pretty much useless";
     private const string MUG_NOTES = "MUG: Go fer a mug shot!";
     private const string CHILD_NOTES = "uhhh, wtf!?";
@@ -45,7 +45,7 @@ public class CurrentAmmoNote : MonoBehaviour
     private const string BOOK_NOTES = "BOOK: ammo > reading material";
     private const string PLANT_NOTES = "Plant";
     private const string THERMUS_NOTES = "Thermus go SPLODE";
-    private const string CALCULATOR_NOTES = "80008135";
+    private const string CALCULATOR_NOTES = "80008135. Slows Zombz down";
     private const string KNIFE_NOTES = "KNIFE: Slices thru zombz!";
     private const string SCISSORS_NOTES = "Cuts thru Zombies";
 

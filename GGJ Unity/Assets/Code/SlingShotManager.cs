@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SlingShotManager : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class SlingShotManager : MonoBehaviour
     public GameObject[] points;
     public float speed;
 
+    public int ammosRemaining;
+    public TextMeshProUGUI _ammoRemaining;
+
     void Awake()
     {
         instance = this;
@@ -26,6 +30,8 @@ public class SlingShotManager : MonoBehaviour
 
     void Start()
     {
+        ammosRemaining = 39 + (PlayerPrefs.GetInt("Wave") * 2);
+        _ammoRemaining.SetText(ammosRemaining.ToString());
         lines[0].SetPosition(0, leftAnchor.position);
         lines[1].SetPosition(0, rightAnchor.position);
         setPath(true);
@@ -56,6 +62,8 @@ public class SlingShotManager : MonoBehaviour
 
     public void SlingAmmo()
     {
+        if (ammosRemaining <= 0) return;
+
         GameSoundManager.Instance.SlingRelease.Play();
         //randomizer
         //_ammoIndex = Random.Range(0, ammos.Count);
@@ -83,6 +91,9 @@ public class SlingShotManager : MonoBehaviour
         DetermineNextAmmo();
 
         Player.Instance.ShowSlingSprite();
+
+        ammosRemaining --;
+        _ammoRemaining.SetText(ammosRemaining.ToString());
     }
 
     void DetermineNextAmmo()

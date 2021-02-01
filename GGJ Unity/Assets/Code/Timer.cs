@@ -39,4 +39,9 @@ public class Timer : MonoBehaviour
             timeText.SetText(TIME_PREFIX + timeString);
         }
     }
+
+    void Pause()
+    {
+        PauseMenu.Instance.Pause();
+    }
 }

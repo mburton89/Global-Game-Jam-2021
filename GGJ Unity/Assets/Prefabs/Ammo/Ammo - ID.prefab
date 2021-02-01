@@ -140,7 +140,7 @@ MonoBehaviour:
   damageToGive: 1.2
   uses: 5
   canImpale: 1
-  windResistance: 0.3
+  windResistance: 0.28
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 9123784566739012669}
   ammoType: 6

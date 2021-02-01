@@ -18,6 +18,7 @@ public class Ammo : MonoBehaviour
 
     private int _zombiesHit;
     //public DollarSplode dollarSplodePrefab;
+    private bool _hasHitZombie;
 
     public enum AmmoType
     {
@@ -52,7 +53,7 @@ public class Ammo : MonoBehaviour
         }
         else
         {
-            rigidbody2D.AddTorque(Random.Range(4, 12));
+            rigidbody2D.AddTorque(Random.Range(5, 14));
         }
         _canGiveDamage = true;
         rigidbody2D.mass = mass;
@@ -84,6 +85,8 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
+                HitStreakManager.Instance.AddToCurrentHitStreak();
+                _hasHitZombie = true;
                 PlayHitSoundAndExplode();
                 _zombiesHit++;
 
@@ -110,6 +113,11 @@ public class Ammo : MonoBehaviour
             }
             Destroy(collider, 0.5f);
             _canGiveDamage = false;
+
+            if (!_hasHitZombie)
+            {
+                HitStreakManager.Instance.Reset();
+            }
         }
 
         if (_zombiesHit == 2)
@@ -130,6 +138,8 @@ public class Ammo : MonoBehaviour
             if (_canGiveDamage)
             {
                 zombie.TakeDamage(damageToGive);
+                HitStreakManager.Instance.AddToCurrentHitStreak();
+                _hasHitZombie = true;
                 PlayHitSoundAndExplode();
 
                 if (ammoType == AmmoType.Glasses)
@@ -151,6 +161,10 @@ public class Ammo : MonoBehaviour
         if (collision.gameObject.tag == "wall")
         {
             _canGiveDamage = false;
+            if (!_hasHitZombie)
+            {
+                HitStreakManager.Instance.Reset();
+            }
         }
 
         spriteRenderer.sortingOrder = -2;

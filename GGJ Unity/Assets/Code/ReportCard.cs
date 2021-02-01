@@ -14,6 +14,7 @@ public class ReportCard : MonoBehaviour
     public TextMeshProUGUI Notes;
 
     public TextMeshProUGUI waveNotes;
+    public TextMeshProUGUI waveNotes2;
     public Image waveCoverImage;
 
     void Awake()
@@ -110,6 +111,7 @@ public class ReportCard : MonoBehaviour
         waveCoverImage.DOFade(1, 1);
         waveNotes.SetText("Get ready for wave " + (PlayerPrefs.GetInt("Wave") + 1).ToString());
         waveNotes.DOFade(1, 1);
+        waveNotes2.DOFade(1, 1);
         yield return new WaitForSeconds(1f);
 
         PlayerPrefs.SetInt("Wave", PlayerPrefs.GetInt("Wave") + 1);
