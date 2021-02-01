@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -9,10 +10,16 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timeText;
     private const string TIME_PREFIX = "00:";
     private bool _canShowWin;
+    public Button pause;
 
     private void Awake()
     {
         _canShowWin = true;
+    }
+
+    private void OnEnable()
+    {
+        pause.onClick.AddListener(Pause);
     }
 
     void Update()

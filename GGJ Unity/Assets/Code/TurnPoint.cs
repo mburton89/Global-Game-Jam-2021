@@ -6,6 +6,7 @@ public class TurnPoint : MonoBehaviour
 {
     public int xDir;
     public int yDir;
+    public int sunglassesXDir;
 
     private void Start()
     {

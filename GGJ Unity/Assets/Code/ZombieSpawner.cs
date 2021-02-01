@@ -16,8 +16,15 @@ public class ZombieSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnCo());
+        StartCoroutine(nameof(SpawnCo));
         zombieSpeed = zombieSpeed + PlayerPrefs.GetInt("Wave");
+    }
+
+    public void EndWave()
+    {
+        spawnRate = 10000;
+        zombieSpeed = 0;
+        StopCoroutine(nameof(SpawnCo));
     }
 
     private IEnumerator SpawnCo()

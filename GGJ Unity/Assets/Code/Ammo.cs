@@ -86,6 +86,12 @@ public class Ammo : MonoBehaviour
                 zombie.TakeDamage(damageToGive);
                 PlayHitSoundAndExplode();
                 _zombiesHit++;
+
+                if (ammoType == AmmoType.Glasses)
+                {
+                    zombie.WearSunglasses();
+                    Destroy(gameObject);
+                }
             }
             DecrementUses();
 
@@ -100,9 +106,10 @@ public class Ammo : MonoBehaviour
             if (canImpale)
             {
                 Destroy(rigidbody2D);
-                _canGiveDamage = false;
                 GameSoundManager.Instance.StickInWall.Play();
             }
+            Destroy(collider, 0.5f);
+            _canGiveDamage = false;
         }
 
         if (_zombiesHit == 2)
@@ -124,6 +131,12 @@ public class Ammo : MonoBehaviour
             {
                 zombie.TakeDamage(damageToGive);
                 PlayHitSoundAndExplode();
+
+                if (ammoType == AmmoType.Glasses)
+                {
+                    zombie.WearSunglasses();
+                    Destroy(gameObject);
+                }
             }
             DecrementUses();
 
@@ -132,12 +145,15 @@ public class Ammo : MonoBehaviour
                 spriteRenderer.sprite = destroyedSprite;
             }
 
+            Destroy(collider, 0.5f);
         }
 
         if (collision.gameObject.tag == "wall")
         {
             _canGiveDamage = false;
         }
+
+        spriteRenderer.sortingOrder = -2;
 
         rigidbody2D.drag = rigidbody2D.drag * 30;
         rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
@@ -148,11 +164,6 @@ public class Ammo : MonoBehaviour
         if (!canImpale)
         {
             _canGiveDamage = false;
-        }
-        uses--;
-        if (uses <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -174,8 +185,18 @@ public class Ammo : MonoBehaviour
         }
         else if (ammoType == AmmoType.Eraser)
         {
+            DollarSplode dollarSplode = Instantiate(Resources.Load("PuffSplode"), transform.position, transform.rotation, null) as DollarSplode;
             GameSoundManager.Instance.EraserPoof.Play();
             ReportCard.Instance.Lol();
+        }
+        else if (ammoType == AmmoType.Glasses)
+        {
+            GameSoundManager.Instance.Sunglasses.Play();
+            ReportCard.Instance.Lol();
+        }
+        else if (ammoType == AmmoType.Keys)
+        {
+            GameSoundManager.Instance.Keys.Play();
         }
         else
         {

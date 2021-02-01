@@ -15,6 +15,9 @@ public class Zombie : MonoBehaviour
     public GameObject walkRightSprites;
     public GameObject walkDownSprites;
 
+    public List<GameObject> sunglasses;
+    private bool _isWearingSunglasses;
+
     private void Start()
     {
         walkLeftSprites.SetActive(true);
@@ -22,6 +25,7 @@ public class Zombie : MonoBehaviour
         walkDownSprites.SetActive(false);
         currentHealth = initialHealth;
         walkDirection = new Vector3(-1, 0, 0);
+        _isWearingSunglasses = false;
     }
     private void Update()
     {
@@ -32,8 +36,16 @@ public class Zombie : MonoBehaviour
         if (collision.gameObject.GetComponent<TurnPoint>())
         {
             TurnPoint turnPoint = collision.gameObject.GetComponent<TurnPoint>();
-            walkDirection = new Vector3(turnPoint.xDir, turnPoint.yDir, 0);
-            DetermineWalkSprites(turnPoint.xDir, turnPoint.yDir);
+            if (_isWearingSunglasses)
+            {
+                walkDirection = new Vector3(turnPoint.sunglassesXDir, 0, 0);
+                DetermineWalkSprites(turnPoint.sunglassesXDir, 0);
+            }
+            else
+            {
+                walkDirection = new Vector3(turnPoint.xDir, turnPoint.yDir, 0);
+                DetermineWalkSprites(turnPoint.xDir, turnPoint.yDir);
+            }
         }
     }
 
@@ -42,8 +54,16 @@ public class Zombie : MonoBehaviour
         if (collision.gameObject.GetComponent<TurnPoint>())
         {
             TurnPoint turnPoint = collision.gameObject.GetComponent<TurnPoint>();
-            walkDirection = new Vector3(turnPoint.xDir, turnPoint.yDir, 0);
-            DetermineWalkSprites(turnPoint.xDir, turnPoint.yDir);
+            if (_isWearingSunglasses)
+            {
+                walkDirection = new Vector3(turnPoint.sunglassesXDir, 0, 0);
+                DetermineWalkSprites(turnPoint.sunglassesXDir, 0);
+            }
+            else
+            {
+                walkDirection = new Vector3(turnPoint.xDir, turnPoint.yDir, 0);
+                DetermineWalkSprites(turnPoint.xDir, turnPoint.yDir);
+            }
         }
 
         if (collision.gameObject.tag == "Player")
@@ -83,9 +103,15 @@ public class Zombie : MonoBehaviour
     {
         currentHealth = currentHealth - damageToTake;
 
+
+
         if (currentHealth <= 0)
         {
             Splode();
+        }
+        else
+        {
+            walkSpeed = walkSpeed /2f;
         }
     }
 
@@ -97,5 +123,14 @@ public class Zombie : MonoBehaviour
         Destroy(gameObject);
         Instantiate(Resources.Load("Explosion") as GameObject, transform.position, transform.rotation, null);
         Instantiate(Resources.Load("BloodSplash 1") as GameObject, transform.position, transform.rotation, null);
+    }
+
+    public void WearSunglasses()
+    {
+        foreach (GameObject gameObject in sunglasses)
+        {
+            gameObject.SetActive(true);
+        }
+        _isWearingSunglasses = true;
     }
 }

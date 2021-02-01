@@ -19,6 +19,8 @@ public class GameSoundManager : MonoBehaviour
     public AudioSource EraserPoof;
     public AudioSource WaterSplode;
     public AudioSource Splode;
+    public AudioSource Sunglasses;
+    public AudioSource Keys;
 
     public AudioSource Music;
 

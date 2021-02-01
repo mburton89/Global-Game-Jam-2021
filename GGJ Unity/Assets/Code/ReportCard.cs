@@ -26,7 +26,7 @@ public class ReportCard : MonoBehaviour
     {
         waveCoverImage.color = Color.black;
         waveCoverImage.DOFade(0, .5f);
-        Wave.SetText("Wave " + PlayerPrefs.GetInt("Wave"));
+        Wave.SetText(PlayerPrefs.GetInt("Wave").ToString());
     }
 
     public void ShowDoubleKill()
@@ -39,7 +39,7 @@ public class ReportCard : MonoBehaviour
     public void ShowTripleKill()
     {
         Grade.SetText("A+");
-        Notes.SetText("Double Kill!");
+        Notes.SetText("Triple Kill!");
         Shake();
     }
 
@@ -104,7 +104,7 @@ public class ReportCard : MonoBehaviour
         }
 
         ZombieSpawner zombieSpawner = FindObjectOfType<ZombieSpawner>();
-        zombieSpawner.spawnRate = 1000;
+        zombieSpawner.EndWave();
 
         yield return new WaitForSeconds(2f);
         waveCoverImage.DOFade(1, 1);
