@@ -141,5 +141,10 @@ public class CurrentAmmoNote : MonoBehaviour
             currentItemSprite.sprite = Scissors;
             notes.SetText(SCISSORS_NOTES);
         }
+        else if (ammoType == Ammo.AmmoType.Mug)
+        {
+            currentItemSprite.sprite = Mug;
+            notes.SetText(MUG_NOTES);
+        }
     }
 }
