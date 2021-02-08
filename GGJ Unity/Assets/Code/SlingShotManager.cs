@@ -30,7 +30,7 @@ public class SlingShotManager : MonoBehaviour
 
     void Start()
     {
-        ammosRemaining = 39 + (PlayerPrefs.GetInt("Wave") * 2);
+        ammosRemaining = 36 + (PlayerPrefs.GetInt("Wave") * 2);
         _ammoRemaining.SetText(ammosRemaining.ToString());
         lines[0].SetPosition(0, leftAnchor.position);
         lines[1].SetPosition(0, rightAnchor.position);

@@ -114,7 +114,7 @@ public class Ammo : MonoBehaviour
             Destroy(collider, 0.5f);
             _canGiveDamage = false;
 
-            if (!_hasHitZombie)
+            if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
             {
                 HitStreakManager.Instance.Reset();
             }
@@ -161,7 +161,7 @@ public class Ammo : MonoBehaviour
         if (collision.gameObject.tag == "wall")
         {
             _canGiveDamage = false;
-            if (!_hasHitZombie)
+            if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
             {
                 HitStreakManager.Instance.Reset();
             }
@@ -211,6 +211,10 @@ public class Ammo : MonoBehaviour
         else if (ammoType == AmmoType.Keys)
         {
             GameSoundManager.Instance.Keys.Play();
+        }
+        else if (ammoType == AmmoType.Mug)
+        {
+            GameSoundManager.Instance.Mug.Play();
         }
         else
         {

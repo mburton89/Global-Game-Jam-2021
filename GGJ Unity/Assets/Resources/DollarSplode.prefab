@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 67629514965201149}
   - component: {fileID: 67629514965201150}
+  - component: {fileID: 8909785949998393448}
   m_Layer: 0
   m_Name: DollarSplode
   m_TagString: Untagged
@@ -59,3 +60,20 @@ MonoBehaviour:
   - {fileID: 6116867448894985098, guid: dc770c3e3aafe274085c9a97e70226b3, type: 3}
   - {fileID: 6116867448894985098, guid: dc770c3e3aafe274085c9a97e70226b3, type: 3}
   - {fileID: 6116867448894985098, guid: dc770c3e3aafe274085c9a97e70226b3, type: 3}
+  collider: {fileID: 8909785949998393448}
+--- !u!58 &8909785949998393448
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67629514965201151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

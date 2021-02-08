@@ -5,6 +5,7 @@ using UnityEngine;
 public class DollarSplode : MonoBehaviour
 {
     public List<Rigidbody2D> dollarPrefabs;
+    public Collider2D collider;
 
     void Start()
     {
@@ -20,6 +21,17 @@ public class DollarSplode : MonoBehaviour
             newDollar.AddTorque(randZ);
         }
 
+        Destroy(collider, .12f);
         Destroy(gameObject, 2);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<Zombie>())
+        {
+            Zombie zombie = collision.gameObject.GetComponent<Zombie>();
+            zombie.TakeDamage(2);
+            HitStreakManager.Instance.AddToCurrentHitStreak();
+        }
     }
 }
