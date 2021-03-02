@@ -49,7 +49,6 @@ public class Ammo : MonoBehaviour
         if (canImpale)
         {
             collider.isTrigger = true;
-
         }
         else
         {
