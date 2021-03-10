@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerDownHandler
 {
     public GameObject HoverEffect;
     public bool isStartButton;
+
+    void Awake()
+    {
+        GetComponent<Image>().color = Color.clear;
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -14,6 +20,11 @@ public class HoverButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         {
             MainMenu.Instance.Play();
         }
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        HoverEffect.SetActive(true);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
