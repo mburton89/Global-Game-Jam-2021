@@ -11,7 +11,7 @@ public class CameraManagerForMobile : MonoBehaviour
     {
         float aspectRatio = (float)Screen.width / (float)Screen.height;
         float cameraSize;
-        cameraSize = (1.25f - aspectRatio) * 13.733f;
+        cameraSize = (1.25f - aspectRatio) * 12.8f;
         Camera.main.orthographicSize = cameraSize;
     }
 }
