@@ -22,7 +22,7 @@ public class DollarSplode : MonoBehaviour
         }
 
         Destroy(collider, .12f);
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 2.1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -18,6 +18,7 @@ public class Intro : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60; 
         _index = 0;
         image.sprite = images[_index];
         text.SetText(phrases[_index]);

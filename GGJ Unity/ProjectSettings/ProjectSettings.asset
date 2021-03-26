@@ -172,7 +172,8 @@ PlayerSettings:
     Android: com.onezerofourlabs.zamh
     Standalone: com.104labs.zamh
     iPhone: com.104labs.zamh
-  buildNumber: {}
+  buildNumber:
+    iPhone: 4
   AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
