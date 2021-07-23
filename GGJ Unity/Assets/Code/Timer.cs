@@ -35,7 +35,8 @@ public class Timer : MonoBehaviour
                 GameSoundManager.Instance.Music.Stop();
                 GameSoundManager.Instance.SchoolBell.Play();
                 _canCountDown = false;
-                ReportCard.Instance.ShowYouWin();
+                //ReportCard.Instance.ShowYouWin();
+                PostWaveMenu.Instance.Activate();
             }
             else
             {
