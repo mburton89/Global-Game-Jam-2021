@@ -6,7 +6,7 @@ public class ZombieSpawner : MonoBehaviour
 {
     public static ZombieSpawner Instance;
 
-    public Zombie zombiePrefab;
+    public List<Zombie> zombiePrefabs;
     public float spawnRate;
     public float zombieSpeed;
     private void Awake()
@@ -29,8 +29,10 @@ public class ZombieSpawner : MonoBehaviour
 
     private IEnumerator SpawnCo()
     {
+        int rand = Random.Range(0, 2);
+        Zombie zombieToSpawn = zombiePrefabs[rand];
         yield return new WaitForSeconds(spawnRate);
-        Zombie newZombie = Instantiate(zombiePrefab, transform.position, transform.rotation, null);
+        Zombie newZombie = Instantiate(zombieToSpawn, transform.position, transform.rotation, null);
         newZombie.walkSpeed = zombieSpeed;
         GameSoundManager.Instance.ZombieSpawn.Play();
         StartCoroutine(SpawnCo());

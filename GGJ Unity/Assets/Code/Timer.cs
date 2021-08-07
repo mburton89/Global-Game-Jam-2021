@@ -37,6 +37,15 @@ public class Timer : MonoBehaviour
                 _canCountDown = false;
                 //ReportCard.Instance.ShowYouWin();
                 PostWaveMenu.Instance.Activate();
+
+                Zombie[] zombies = FindObjectsOfType<Zombie>();
+                foreach (Zombie zombie in zombies)
+                {
+                    zombie.walkSpeed = 0;
+                }
+
+                ZombieSpawner zombieSpawner = FindObjectOfType<ZombieSpawner>();
+                zombieSpawner.EndWave();
             }
             else
             {

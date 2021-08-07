@@ -59,6 +59,7 @@ public class Ammo : MonoBehaviour
         float windMultiplier = windResistance * 40;
         windResistance = Random.Range(-windMultiplier, windMultiplier);
         _zombiesHit = 0;
+        PostWaveMenu.Instance.itemsShot++;
     }
 
     private void Update()
@@ -88,6 +89,11 @@ public class Ammo : MonoBehaviour
                 _hasHitZombie = true;
                 PlayHitSoundAndExplode();
                 _zombiesHit++;
+
+                if (_zombiesHit > 1)
+                {
+                    PostWaveMenu.Instance.multiKills++;
+                }
 
                 if (ammoType == AmmoType.Glasses)
                 {
@@ -219,5 +225,7 @@ public class Ammo : MonoBehaviour
         {
             GameSoundManager.Instance.ItemHit.Play();
         }
+
+        PostWaveMenu.Instance.itemsHit++;
     }
 }

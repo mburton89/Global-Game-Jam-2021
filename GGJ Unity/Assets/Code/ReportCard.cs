@@ -67,10 +67,9 @@ public class ReportCard : MonoBehaviour
 
     public void ShowYouWin()
     {
-        Grade.SetText("A+");
+        Grade.SetText("!!");
         Notes.SetText("Wave Complete");
         Shake();
-        ShowWaveTransition();
     }
 
     void Shake()
@@ -98,16 +97,16 @@ public class ReportCard : MonoBehaviour
 
     private IEnumerator ShowWaveTransitionCo()
     {
-        Zombie[] zombies = FindObjectsOfType<Zombie>();
-        foreach (Zombie zombie in zombies)
-        {
-            zombie.walkSpeed = 0;
-        }
+        //Zombie[] zombies = FindObjectsOfType<Zombie>();
+        //foreach (Zombie zombie in zombies)
+        //{
+        //    zombie.walkSpeed = 0;
+        //}
 
-        ZombieSpawner zombieSpawner = FindObjectOfType<ZombieSpawner>();
-        zombieSpawner.EndWave();
+        //ZombieSpawner zombieSpawner = FindObjectOfType<ZombieSpawner>();
+        //zombieSpawner.EndWave();
 
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
         waveCoverImage.DOFade(1, 1);
         waveNotes.SetText("Get ready for wave " + (PlayerPrefs.GetInt("Wave") + 1).ToString());
         waveNotes.DOFade(1, 1);
