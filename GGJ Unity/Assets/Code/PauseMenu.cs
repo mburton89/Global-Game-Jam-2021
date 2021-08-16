@@ -40,8 +40,20 @@ public class PauseMenu : MonoBehaviour
         click.Play();
     }
 
+    public void Pause(bool showPauseMenu)
+    {
+        if (showPauseMenu)
+        {
+            container.SetActive(true);
+        }
+        drag.SetActive(false);
+        slingshot.SetActive(false);
+        Time.timeScale = 0;
+        GameSoundManager.Instance.Music.volume = GameSoundManager.Instance.Music.volume / 2;
+        click.Play();
+    }
 
-    void Resume()
+    public void Resume()
     {
         drag.SetActive(true);
         slingshot.SetActive(true);

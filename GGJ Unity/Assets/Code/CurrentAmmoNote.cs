@@ -49,11 +49,14 @@ public class CurrentAmmoNote : MonoBehaviour
     private const string KNIFE_NOTES = "KNIFE: Slices thru zombz!";
     private const string SCISSORS_NOTES = "Cuts thru Zombies";
 
+    [SerializeField] Button button;
 
     private void Awake()
     {
-        Instance = this;    
+        Instance = this;
+        button.onClick.AddListener(OpenJournal);
     }
+
     public void UpdateUI(Ammo.AmmoType ammoType)
     {
         if (ammoType == Ammo.AmmoType.WaterBottle)
@@ -146,5 +149,11 @@ public class CurrentAmmoNote : MonoBehaviour
             currentItemSprite.sprite = Mug;
             notes.SetText(MUG_NOTES);
         }
+    }
+
+    void OpenJournal()
+    {
+        PauseMenu.Instance.Pause(false);
+        JournalMenu.Instance.Activate();
     }
 }
