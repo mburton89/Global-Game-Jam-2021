@@ -62,7 +62,8 @@ public class PostWaveMenu : MonoBehaviour
         print(accuracy);
         accuracyText.SetText(accuracy.ToString() + "%");
         multiKillsText.SetText(multiKills.ToString());
-        itemsLeftText.SetText(itemsLeftNote.text);
+        itemsLeftText.SetText(SlingShotManager.instance.ammosRemaining.ToString());
+        PlayerPrefs.SetInt("ItemsRemaining", SlingShotManager.instance.ammosRemaining);
         DetermineGrade();
     }
 
