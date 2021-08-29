@@ -90,7 +90,11 @@ public class Ammo : MonoBehaviour
                 PlayHitSoundAndExplode();
                 _zombiesHit++;
 
-                if (_zombiesHit > 1)
+                if (_zombiesHit == 1)
+                {
+                    PostWaveMenu.Instance.itemsHit++;
+                }
+                else if (_zombiesHit > 1)
                 {
                     PostWaveMenu.Instance.multiKills++;
                 }
@@ -146,12 +150,12 @@ public class Ammo : MonoBehaviour
                 HitStreakManager.Instance.AddToCurrentHitStreak();
                 _hasHitZombie = true;
                 PlayHitSoundAndExplode();
-
+                PostWaveMenu.Instance.itemsHit++;
                 if (ammoType == AmmoType.Glasses)
                 {
                     zombie.WearSunglasses();
                     Destroy(gameObject);
-                }
+                }                
             }
             DecrementUses();
 
@@ -225,7 +229,5 @@ public class Ammo : MonoBehaviour
         {
             GameSoundManager.Instance.ItemHit.Play();
         }
-
-        PostWaveMenu.Instance.itemsHit++;
     }
 }
