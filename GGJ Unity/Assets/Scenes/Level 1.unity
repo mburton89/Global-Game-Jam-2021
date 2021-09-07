@@ -8193,6 +8193,7 @@ MonoBehaviour:
   - {fileID: 9206382138706678355, guid: 553522f71454db844b826f08112939a1, type: 3}
   - {fileID: 8122019138436668735, guid: 8729a5805b6803845a0efd0cc6b9bda1, type: 3}
   - {fileID: 3422803835033888889, guid: 4cfacc4d4765d8f4aafc0ff2e48c036e, type: 3}
+  - {fileID: 2802250293203007330, guid: 08604411b17e2441ea3618b1ddcdcbd0, type: 3}
   nextAmmo: {fileID: 0}
   leftAnchor: {fileID: 1164045786}
   rightAnchor: {fileID: 318323838}

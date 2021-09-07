@@ -39,7 +39,8 @@ public class Ammo : MonoBehaviour
         Thermus,
         Calculator,
         Knife,
-        Scissors
+        Scissors,
+        Dodgeball
     }
 
     public AmmoType ammoType;
@@ -164,6 +165,8 @@ public class Ammo : MonoBehaviour
                 spriteRenderer.sprite = destroyedSprite;
             }
 
+            HandleDodgeBall();
+
             Destroy(collider, 0.5f);
         }
 
@@ -174,12 +177,25 @@ public class Ammo : MonoBehaviour
             {
                 HitStreakManager.Instance.Reset();
             }
+
+            HandleDodgeBall();
         }
 
         spriteRenderer.sortingOrder = -2;
 
         rigidbody2D.drag = rigidbody2D.drag * 30;
         rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
+
+
+    }
+
+    void HandleDodgeBall()
+    {
+        if (ammoType == AmmoType.Dodgeball)
+        {
+            GameObject clone = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
+            clone.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 10, ForceMode2D.Impulse);
+        }
     }
 
     void DecrementUses()
