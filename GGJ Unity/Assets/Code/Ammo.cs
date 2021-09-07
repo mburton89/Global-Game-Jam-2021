@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
+    private SlingShotManager _slingShotManager;
     public Rigidbody2D rigidbody2D;
     public CircleCollider2D collider;
     public float mass;
@@ -19,6 +20,7 @@ public class Ammo : MonoBehaviour
     private int _zombiesHit;
     //public DollarSplode dollarSplodePrefab;
     private bool _hasHitZombie;
+    public bool canBounce;
 
     public enum AmmoType
     {
@@ -61,6 +63,7 @@ public class Ammo : MonoBehaviour
         windResistance = Random.Range(-windMultiplier, windMultiplier);
         _zombiesHit = 0;
         PostWaveMenu.Instance.itemsShot++;
+        _slingShotManager = FindObjectOfType<SlingShotManager>();
     }
 
     private void Update()
@@ -80,6 +83,7 @@ public class Ammo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("hi" + gameObject.name);
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
@@ -121,9 +125,11 @@ public class Ammo : MonoBehaviour
                 Destroy(rigidbody2D);
                 GameSoundManager.Instance.StickInWall.Play();
             }
-            Destroy(collider, 0.5f);
-            _canGiveDamage = false;
-
+            if (ammoType != AmmoType.Dodgeball)
+            {
+                Destroy(collider, 0.5f);
+                _canGiveDamage = false;
+            }
             if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
             {
                 HitStreakManager.Instance.Reset();
@@ -158,48 +164,39 @@ public class Ammo : MonoBehaviour
                     Destroy(gameObject);
                 }                
             }
-            DecrementUses();
 
             if (destroyedSprite != null)
             {
                 spriteRenderer.sprite = destroyedSprite;
             }
-
-            HandleDodgeBall();
-
-            Destroy(collider, 0.5f);
         }
 
         if (collision.gameObject.tag == "wall")
         {
-            _canGiveDamage = false;
+            //_canGiveDamage = false;
             if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
             {
                 HitStreakManager.Instance.Reset();
             }
-
-            HandleDodgeBall();
         }
 
-        spriteRenderer.sortingOrder = -2;
-
-        rigidbody2D.drag = rigidbody2D.drag * 30;
-        rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
-
-
-    }
-
-    void HandleDodgeBall()
-    {
-        if (ammoType == AmmoType.Dodgeball)
+        if (canBounce)
         {
-            GameObject clone = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
-            clone.GetComponent<Rigidbody2D>().AddForce(Vector2.down * 10, ForceMode2D.Impulse);
+            //canBounce = false;
+        }
+        else
+        {
+            spriteRenderer.sortingOrder = -2;
+            rigidbody2D.drag = rigidbody2D.drag * 30;
+            rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
+            Destroy(collider, 0.5f);
+            DecrementUses();
         }
     }
 
     void DecrementUses()
     {
+        if (ammoType == AmmoType.Dodgeball) return;
         if (!canImpale)
         {
             _canGiveDamage = false;

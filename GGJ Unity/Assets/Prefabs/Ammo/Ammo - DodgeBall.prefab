@@ -197,7 +197,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 2802250293203007261}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 32eed99d237284e3aa39e7fa8564d632, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -223,6 +223,7 @@ MonoBehaviour:
   uses: 5
   canImpale: 0
   windResistance: 0
-  destroyedSprite: {fileID: 21300000, guid: 9ca0995edf014cc47b015ee2f8d868cf, type: 3}
+  destroyedSprite: {fileID: 21300000, guid: c84dcc49595154a29b3f95ce93c22762, type: 3}
   spriteRenderer: {fileID: 2802250291304439594}
+  canBounce: 1
   ammoType: 18
