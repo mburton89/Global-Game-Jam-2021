@@ -9,7 +9,7 @@ public class Ammo : MonoBehaviour
     public CircleCollider2D collider;
     public float mass;
     public float damageToGive;
-    public int uses;
+    public int bounces;
     public bool canImpale;
     private bool _canGiveDamage;
     public float windResistance;
@@ -20,7 +20,6 @@ public class Ammo : MonoBehaviour
     private int _zombiesHit;
     //public DollarSplode dollarSplodePrefab;
     private bool _hasHitZombie;
-    public bool canBounce;
 
     public enum AmmoType
     {
@@ -42,7 +41,12 @@ public class Ammo : MonoBehaviour
         Calculator,
         Knife,
         Scissors,
-        Dodgeball
+        Dodgeball,
+        FidgetSpinner,
+        RubberChicken,
+        StickySoda,
+        FoamSword,
+        EarBuds
     }
 
     public AmmoType ammoType;
@@ -110,7 +114,6 @@ public class Ammo : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-            DecrementUses();
 
             if (destroyedSprite != null)
             {
@@ -173,35 +176,27 @@ public class Ammo : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
-            //_canGiveDamage = false;
             if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
             {
                 HitStreakManager.Instance.Reset();
             }
         }
 
-        if (canBounce)
-        {
-            //canBounce = false;
-        }
-        else
+        bounces--;
+        if (bounces < 1)
         {
             spriteRenderer.sortingOrder = -2;
             rigidbody2D.drag = rigidbody2D.drag * 30;
             rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
             Destroy(collider, 0.5f);
-            DecrementUses();
+            if (!canImpale)
+            {
+                _canGiveDamage = false;
+            }
         }
     }
 
-    void DecrementUses()
-    {
-        if (ammoType == AmmoType.Dodgeball) return;
-        if (!canImpale)
-        {
-            _canGiveDamage = false;
-        }
-    }
+
 
     void PlayHitSoundAndExplode()
     {

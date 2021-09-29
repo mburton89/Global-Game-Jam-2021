@@ -220,7 +220,7 @@ MonoBehaviour:
   collider: {fileID: 2802250293203007331}
   mass: 1.2
   damageToGive: 1
-  uses: 5
+  bounces: 3
   canImpale: 0
   windResistance: 0
   destroyedSprite: {fileID: 21300000, guid: c84dcc49595154a29b3f95ce93c22762, type: 3}

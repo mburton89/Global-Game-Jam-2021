@@ -220,9 +220,10 @@ MonoBehaviour:
   collider: {fileID: 8122019138436668734}
   mass: 1
   damageToGive: 0.5
-  uses: 5
+  bounces: 1
   canImpale: 0
   windResistance: 0
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 8122019137404747600}
+  canBounce: 0
   ammoType: 7

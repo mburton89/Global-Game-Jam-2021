@@ -2992,6 +2992,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264889147}
   m_CullTransparentMesh: 0
+--- !u!1 &265311817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 265311818}
+  - component: {fileID: 265311819}
+  m_Layer: 0
+  m_Name: Wall - Trigger (3)
+  m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265311818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265311817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27, y: -23.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708979576}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &265311819
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265311817}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 48.2, y: 4.72}
+  m_EdgeRadius: 0
 --- !u!1 &318323837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,6 +3690,12 @@ MonoBehaviour:
   Knife: {fileID: 5241730990105934439, guid: 1b9b9d35ee9e10449974aacf98c4620e, type: 3}
   Scissors: {fileID: 5950332462888797424, guid: 1b9b9d35ee9e10449974aacf98c4620e,
     type: 3}
+  Dodgeball: {fileID: 21300000, guid: adfafae0bd5aec146a3162d40931199b, type: 3}
+  FidgetSpinner: {fileID: 0}
+  RubberChicken: {fileID: 0}
+  FoamSword: {fileID: 0}
+  StickySoda: {fileID: 0}
+  EarBuds: {fileID: 0}
   currentItemSprite: {fileID: 1485266581}
   notes: {fileID: 237214200}
   button: {fileID: 374176472}
@@ -8178,6 +8241,22 @@ MonoBehaviour:
   ball: {fileID: 1661771542671714}
   ammos:
   - {fileID: 2802250293203007330, guid: 08604411b17e2441ea3618b1ddcdcbd0, type: 3}
+  - {fileID: 6492957280882520975, guid: 146dd82d0de36e84a9b3d6a23eb90517, type: 3}
+  - {fileID: 5627763928889152199, guid: a1bc67f030b0e4f4bb0ff5d876e85d6c, type: 3}
+  - {fileID: 3422803835033888889, guid: 4cfacc4d4765d8f4aafc0ff2e48c036e, type: 3}
+  - {fileID: 8370365140805603248, guid: b3aaf64939c1b444c851acf735efdeb1, type: 3}
+  - {fileID: 9123784566502923826, guid: 7a87bd425debdaa478747f23f5ff5c81, type: 3}
+  - {fileID: 8122019138436668735, guid: 8729a5805b6803845a0efd0cc6b9bda1, type: 3}
+  - {fileID: 1473123600659781142, guid: 4dcf2d9996c09bf4dbe27a0d558f1c77, type: 3}
+  - {fileID: 2802250293203007330, guid: c7b97599f3ce58e4e87594f65bc14660, type: 3}
+  - {fileID: 6378614430424687674, guid: 8277d16ffd016704490c87e98b0d7405, type: 3}
+  - {fileID: 1028403187868191169, guid: 4458e88c23ab7084ba1c121f7a34ce7a, type: 3}
+  - {fileID: 7527993728789166818, guid: 00a45446ebd2f8d4dad3ad6f0c043977, type: 3}
+  - {fileID: 6819748909092323158, guid: 24d9693f7d933624e86d336956238164, type: 3}
+  - {fileID: 2690944722290043617, guid: 42acb41ad0a53d9448d23206e6a8236d, type: 3}
+  - {fileID: 9206382138706678355, guid: 553522f71454db844b826f08112939a1, type: 3}
+  - {fileID: 4843125590679508283, guid: a97aae8344bde584f8a012937b803823, type: 3}
+  - {fileID: 363554352327601221, guid: ffc8e6c970f4c2744b6168d3e240a790, type: 3}
   nextAmmo: {fileID: 0}
   leftAnchor: {fileID: 1164045786}
   rightAnchor: {fileID: 318323838}
@@ -10411,6 +10490,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068695539}
   m_CullTransparentMesh: 0
+--- !u!1 &1073031965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073031966}
+  - component: {fileID: 1073031967}
+  m_Layer: 0
+  m_Name: Wall (3)
+  m_TagString: wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1073031966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073031965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27, y: -23.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708979576}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1073031967
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073031965}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 48.2, y: 1.89}
+  m_EdgeRadius: 0
 --- !u!1 &1075902853
 GameObject:
   m_ObjectHideFlags: 0
@@ -16473,6 +16609,8 @@ Transform:
   - {fileID: 922215794}
   - {fileID: 1241954212}
   - {fileID: 542675721}
+  - {fileID: 1073031966}
+  - {fileID: 265311818}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

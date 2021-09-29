@@ -26,6 +26,12 @@ public class CurrentAmmoNote : MonoBehaviour
     public Sprite Calculator;
     public Sprite Knife;
     public Sprite Scissors;
+    public Sprite Dodgeball;
+    public Sprite FidgetSpinner;
+    public Sprite RubberChicken;
+    public Sprite FoamSword;
+    public Sprite StickySoda;
+    public Sprite EarBuds;
     public Image currentItemSprite;
 
     public TextMeshProUGUI notes;
@@ -148,6 +154,30 @@ public class CurrentAmmoNote : MonoBehaviour
         {
             currentItemSprite.sprite = Mug;
             notes.SetText(MUG_NOTES);
+        }
+        else if (ammoType == Ammo.AmmoType.Dodgeball)
+        {
+            currentItemSprite.sprite = Dodgeball;
+        }
+        else if (ammoType == Ammo.AmmoType.FidgetSpinner)
+        {
+            currentItemSprite.sprite = FidgetSpinner;
+        }
+        else if (ammoType == Ammo.AmmoType.RubberChicken)
+        {
+            currentItemSprite.sprite = RubberChicken;
+        }
+        else if (ammoType == Ammo.AmmoType.EarBuds)
+        {
+            currentItemSprite.sprite = EarBuds;
+        }
+        else if (ammoType == Ammo.AmmoType.FoamSword)
+        {
+            currentItemSprite.sprite = FoamSword;
+        }
+        else if (ammoType == Ammo.AmmoType.StickySoda)
+        {
+            currentItemSprite.sprite = StickySoda;
         }
     }
 
