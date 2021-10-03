@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6330589989891199682}
   - component: {fileID: 6272181211548950455}
   m_Layer: 0
-  m_Name: Ammo - BoardEraser
+  m_Name: ZZ_Ammo - BoardEraser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,8 @@ MonoBehaviour:
   bounces: 1
   canImpale: 0
   windResistance: 0
+  timeToLive: 2.3
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
-  canBounce: 0
+  hitSound: {fileID: 0}
   ammoType: 0

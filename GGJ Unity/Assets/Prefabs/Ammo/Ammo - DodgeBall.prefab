@@ -187,7 +187,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2802250293203007331
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -223,7 +223,8 @@ MonoBehaviour:
   bounces: 3
   canImpale: 0
   windResistance: 0
+  timeToLive: 3
   destroyedSprite: {fileID: 21300000, guid: c84dcc49595154a29b3f95ce93c22762, type: 3}
   spriteRenderer: {fileID: 2802250291304439594}
-  canBounce: 1
+  hitSound: {fileID: 8300000, guid: bbeb5533059acf74d9da1ed4102ea187, type: 3}
   ammoType: 18

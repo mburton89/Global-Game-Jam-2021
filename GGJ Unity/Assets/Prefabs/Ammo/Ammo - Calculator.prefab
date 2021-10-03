@@ -141,9 +141,10 @@ MonoBehaviour:
   bounces: 1
   canImpale: 0
   windResistance: 0.08
+  timeToLive: 2.3
   destroyedSprite: {fileID: 21300000, guid: 29976f31636074c42892b67edb3453e0, type: 3}
   spriteRenderer: {fileID: 5627763928898100976}
-  canBounce: 0
+  hitSound: {fileID: 8300000, guid: a00e4ee53175e704ca89c059b7893013, type: 3}
   ammoType: 15
 --- !u!1 &5627763928898100979
 GameObject:

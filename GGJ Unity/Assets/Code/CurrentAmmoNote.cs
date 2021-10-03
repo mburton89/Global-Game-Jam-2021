@@ -32,6 +32,7 @@ public class CurrentAmmoNote : MonoBehaviour
     public Sprite FoamSword;
     public Sprite StickySoda;
     public Sprite EarBuds;
+    public Sprite LunchMoneySprite;
     public Image currentItemSprite;
 
     public TextMeshProUGUI notes;
@@ -178,6 +179,10 @@ public class CurrentAmmoNote : MonoBehaviour
         else if (ammoType == Ammo.AmmoType.StickySoda)
         {
             currentItemSprite.sprite = StickySoda;
+        }
+        else if (ammoType == Ammo.AmmoType.LunchMoney)
+        {
+            currentItemSprite.sprite = LunchMoneySprite;
         }
     }
 

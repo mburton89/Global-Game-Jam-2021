@@ -13,12 +13,14 @@ public class Ammo : MonoBehaviour
     public bool canImpale;
     private bool _canGiveDamage;
     public float windResistance;
+    public float timeToLive;
 
     public Sprite destroyedSprite;
     public SpriteRenderer spriteRenderer;
 
+    public AudioClip hitSound;
+
     private int _zombiesHit;
-    //public DollarSplode dollarSplodePrefab;
     private bool _hasHitZombie;
 
     public enum AmmoType
@@ -46,7 +48,8 @@ public class Ammo : MonoBehaviour
         RubberChicken,
         StickySoda,
         FoamSword,
-        EarBuds
+        EarBuds,
+        LunchMoney
     }
 
     public AmmoType ammoType;
@@ -128,7 +131,7 @@ public class Ammo : MonoBehaviour
                 Destroy(rigidbody2D);
                 GameSoundManager.Instance.StickInWall.Play();
             }
-            if (ammoType != AmmoType.Dodgeball)
+            if (ammoType != AmmoType.Dodgeball && ammoType != AmmoType.FidgetSpinner)
             {
                 Destroy(collider, 0.5f);
                 _canGiveDamage = false;
@@ -172,6 +175,13 @@ public class Ammo : MonoBehaviour
             {
                 spriteRenderer.sprite = destroyedSprite;
             }
+
+            if (ammoType == AmmoType.StickySoda)
+            {
+                Destroy(rigidbody2D);
+                transform.SetParent(collision.transform);
+                transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y + .5f, 0);
+            }
         }
 
         if (collision.gameObject.tag == "wall")
@@ -194,21 +204,41 @@ public class Ammo : MonoBehaviour
                 _canGiveDamage = false;
             }
         }
+
+        if (ammoType == AmmoType.FidgetSpinner)
+        {
+            if (bounces == 0)
+            {
+                Destroy(gameObject);
+            }
+            GetComponent<AudioSource>().Play();
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.AddTorque(80f);
+            rigidbody2D.drag = rigidbody2D.drag = 0.2f;
+            rigidbody2D.angularDrag = rigidbody2D.angularDrag = 0.2f;
+        }
     }
 
 
 
     void PlayHitSoundAndExplode()
     {
+        if (hitSound != null)
+        {
+            GameSoundManager.Instance.PlayHitSound(hitSound);
+        }
+        else
+        {
+            Debug.LogWarning("Repace Ammo with new sound logic");
+        }
+
         if (ammoType == AmmoType.WaterBottle || ammoType == AmmoType.Thermus)
         {
-            GameSoundManager.Instance.WaterSplode.Play();
             Instantiate(Resources.Load("Water2") as GameObject, transform.position, transform.rotation, null);
             ReportCard.Instance.ShowWaterSplode();
         }
         else if (ammoType == AmmoType.Wallet)
         {
-            GameSoundManager.Instance.ChaCHING.Play();
             //Instantiate(Resources.Load("MoneyExplosion") as GameObject, transform.position, transform.rotation, null);
             DollarSplode dollarSplode = Instantiate(Resources.Load("DollarSplode"), transform.position, transform.rotation, null) as DollarSplode;
             //Destroy(dollarSplode.gameObject, 3);
@@ -217,25 +247,15 @@ public class Ammo : MonoBehaviour
         else if (ammoType == AmmoType.Eraser)
         {
             DollarSplode dollarSplode = Instantiate(Resources.Load("PuffSplode"), transform.position, transform.rotation, null) as DollarSplode;
-            GameSoundManager.Instance.EraserPoof.Play();
             ReportCard.Instance.Lol();
         }
-        else if (ammoType == AmmoType.Glasses)
+    }
+
+    private void OnDestroy()
+    {
+        if (ammoType == AmmoType.StickySoda)
         {
-            GameSoundManager.Instance.Sunglasses.Play();
-            ReportCard.Instance.Lol();
-        }
-        else if (ammoType == AmmoType.Keys)
-        {
-            GameSoundManager.Instance.Keys.Play();
-        }
-        else if (ammoType == AmmoType.Mug)
-        {
-            GameSoundManager.Instance.Mug.Play();
-        }
-        else
-        {
-            GameSoundManager.Instance.ItemHit.Play();
+            Instantiate(Resources.Load("Soda") as GameObject, transform.position, transform.rotation, null);
         }
     }
 }
