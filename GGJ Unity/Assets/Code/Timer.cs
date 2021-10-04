@@ -20,6 +20,11 @@ public class Timer : MonoBehaviour
         _canCountDown = true;
     }
 
+    private void Start()
+    {
+        GameSoundManager.Instance.Music.volume = GameSoundManager.Instance.Music.volume * 2;
+    }
+
     private void OnEnable()
     {
         pause.onClick.AddListener(Pause);
@@ -32,7 +37,8 @@ public class Timer : MonoBehaviour
             if (timeLeft <= 0)
             {
                 timeText.SetText("00:00");
-                GameSoundManager.Instance.Music.Stop();
+                //GameSoundManager.Instance.Music.Stop();
+                GameSoundManager.Instance.Music.volume = GameSoundManager.Instance.Music.volume / 2;
                 GameSoundManager.Instance.SchoolBell.Play();
                 _canCountDown = false;
                 //ReportCard.Instance.ShowYouWin();
