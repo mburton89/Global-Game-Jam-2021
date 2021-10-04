@@ -35,7 +35,8 @@ public class SlingShotManager : MonoBehaviour
             PlayerPrefs.SetInt("ItemsRemaining", 20);
         }
         //ammosRemaining = 36 + (PlayerPrefs.GetInt("Wave") * 2);
-        ammosRemaining = PlayerPrefs.GetInt("ItemsRemaining") + 10;
+        //ammosRemaining = PlayerPrefs.GetInt("ItemsRemaining") + 10;
+        ammosRemaining = 20;
         _ammoRemaining.SetText(ammosRemaining.ToString());
         lines[0].SetPosition(0, leftAnchor.position);
         lines[1].SetPosition(0, rightAnchor.position);

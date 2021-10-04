@@ -196,9 +196,9 @@ public class Ammo : MonoBehaviour
         if (bounces < 1)
         {
             spriteRenderer.sortingOrder = -2;
-            rigidbody2D.drag = rigidbody2D.drag * 30;
-            rigidbody2D.angularDrag = rigidbody2D.angularDrag * 30;
-            Destroy(collider, 0.5f);
+            rigidbody2D.drag = rigidbody2D.drag = 5;
+            rigidbody2D.angularDrag = rigidbody2D.angularDrag = 5;
+            Destroy(collider, 0.25f);
             if (!canImpale)
             {
                 _canGiveDamage = false;

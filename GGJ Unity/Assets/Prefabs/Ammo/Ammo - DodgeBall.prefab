@@ -180,8 +180,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.1
-  m_AngularDrag: 0.1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -218,9 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 2802250293203007328}
   collider: {fileID: 2802250293203007331}
-  mass: 1.2
+  mass: 1
   damageToGive: 1
-  bounces: 3
+  bounces: 4
   canImpale: 0
   windResistance: 0
   timeToLive: 3
