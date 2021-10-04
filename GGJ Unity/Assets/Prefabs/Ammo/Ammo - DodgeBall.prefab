@@ -224,6 +224,7 @@ MonoBehaviour:
   canImpale: 0
   windResistance: 0
   timeToLive: 3
+  sketch: {fileID: -4133535658437438512, guid: 86648de2144a8e641bc7f9912124ebae, type: 3}
   destroyedSprite: {fileID: 21300000, guid: c84dcc49595154a29b3f95ce93c22762, type: 3}
   spriteRenderer: {fileID: 2802250291304439594}
   hitSound: {fileID: 8300000, guid: bbeb5533059acf74d9da1ed4102ea187, type: 3}

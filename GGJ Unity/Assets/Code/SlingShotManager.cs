@@ -42,6 +42,8 @@ public class SlingShotManager : MonoBehaviour
         lines[1].SetPosition(0, rightAnchor.position);
         setPath(true);
 
+        _ammoIndex = 0;
+        //RandomizeOrder();
         DetermineNextAmmo();
     }
 
@@ -68,7 +70,10 @@ public class SlingShotManager : MonoBehaviour
 
     public void SlingAmmo()
     {
-        if (ammosRemaining <= 0) return;
+        if (ammosRemaining <= 0)
+        {
+            return;
+        }
 
         GameSoundManager.Instance.SlingRelease.Play();
         //randomizer
@@ -100,12 +105,28 @@ public class SlingShotManager : MonoBehaviour
 
         ammosRemaining --;
         _ammoRemaining.SetText(ammosRemaining.ToString());
+
+        if (ammosRemaining < 1)
+        {
+            CurrentAmmoNote.Instance.UpdateUI(null);
+        }
     }
 
     void DetermineNextAmmo()
     {
         _ammoIndex = Random.Range(0, ammos.Count);
         nextAmmo = ammos[_ammoIndex];
-        CurrentAmmoNote.Instance.UpdateUI(nextAmmo.ammoType);
+        CurrentAmmoNote.Instance.UpdateUI(nextAmmo.sketch);
+        if (ammos.Count > 1)
+        {
+            ammos.RemoveAt(_ammoIndex);
+        }
     }
+
+    //void DetermineNextAmmo()
+    //{
+    //    _ammoIndex ++;
+    //    nextAmmo = ammos[_ammoIndex];
+    //    CurrentAmmoNote.Instance.UpdateUI(nextAmmo.sketch);
+    //}
 }

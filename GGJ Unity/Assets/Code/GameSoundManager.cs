@@ -12,6 +12,7 @@ public class GameSoundManager : MonoBehaviour
     public AudioSource SchoolBell;
     public AudioSource ZombieSpawn;
     public AudioSource ZombieSplode;
+    public AudioSource ZombieEat;
     public AudioSource Splode;
     //public AudioSource ItemHit;
     //public AudioSource Chaching;

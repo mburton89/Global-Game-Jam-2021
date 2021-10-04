@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8370365140805603248}
   - component: {fileID: 653314457990629683}
   m_Layer: 0
-  m_Name: Ammo - FoamSword
+  m_Name: ZZ_Ammo - FoamSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   canImpale: 0
   windResistance: 0.2
   timeToLive: 2.3
+  sketch: {fileID: 8773120468975663587, guid: 86648de2144a8e641bc7f9912124ebae, type: 3}
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 8370365140615390362}
   hitSound: {fileID: 8300000, guid: 3585d3c8b3ce84b429235367b9636454, type: 3}

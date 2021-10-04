@@ -325,7 +325,7 @@ TextureImporter:
         width: 192
         height: 173
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -333,6 +333,27 @@ TextureImporter:
       bones: []
       spriteID: c7be970458e340ab0800000000000000
       internalID: -5042836940714808452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ZAMH_currentitem_2_1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 346
+        width: 139
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ab9ed7856de3690800000000000000
+      internalID: -7620417843906364902
       vertices: []
       indices: 
       edges: []

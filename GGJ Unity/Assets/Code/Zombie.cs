@@ -68,6 +68,7 @@ public class Zombie : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            GameSoundManager.Instance.ZombieEat.Play();
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }

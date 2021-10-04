@@ -8,31 +8,33 @@ public class CurrentAmmoNote : MonoBehaviour
 {
     public static CurrentAmmoNote Instance;
 
-    public Sprite waterBottle;
-    public Sprite wallet;
-    public Sprite pencil;
-    public Sprite phone;
-    public Sprite glasses;
-    public Sprite unbrella;
-    public Sprite ID;
-    public Sprite Keys;
-    public Sprite Eraser;
-    public Sprite Mug;
-    public Sprite Child;
-    public Sprite Globe;
-    public Sprite Book;
-    public Sprite Plant;
-    public Sprite Thermus;
-    public Sprite Calculator;
-    public Sprite Knife;
-    public Sprite Scissors;
-    public Sprite Dodgeball;
-    public Sprite FidgetSpinner;
-    public Sprite RubberChicken;
-    public Sprite FoamSword;
-    public Sprite StickySoda;
-    public Sprite EarBuds;
-    public Sprite LunchMoneySprite;
+    //public Sprite waterBottle;
+    //public Sprite wallet;
+    //public Sprite pencil;
+    //public Sprite phone;
+    //public Sprite glasses;
+    //public Sprite unbrella;
+    //public Sprite ID;
+    //public Sprite Keys;
+    //public Sprite Eraser;
+    //public Sprite Mug;
+    //public Sprite Child;
+    //public Sprite Globe;
+    //public Sprite Book;
+    //public Sprite Plant;
+    //public Sprite Thermus;
+    //public Sprite Calculator;
+    //public Sprite Knife;
+    //public Sprite Scissors;
+    //public Sprite Dodgeball;
+    //public Sprite FidgetSpinner;
+    //public Sprite RubberChicken;
+    //public Sprite FoamSword;
+    //public Sprite StickySoda;
+    //public Sprite EarBuds;
+    //public Sprite LunchMoneySprite;
+    //public Sprite Apple;
+    public Sprite empty;
     public Image currentItemSprite;
 
     public TextMeshProUGUI notes;
@@ -64,127 +66,143 @@ public class CurrentAmmoNote : MonoBehaviour
         button.onClick.AddListener(OpenJournal);
     }
 
-    public void UpdateUI(Ammo.AmmoType ammoType)
+    public void UpdateUI(Sprite ammoSketch)
     {
-        if (ammoType == Ammo.AmmoType.WaterBottle)
+        if (ammoSketch != null)
         {
-            currentItemSprite.sprite = waterBottle;
-            notes.SetText(WATER_BOTTLE_NOTES);
+            currentItemSprite.sprite = ammoSketch;
         }
-        else if (ammoType == Ammo.AmmoType.Wallet)
+        else
         {
-            currentItemSprite.sprite = wallet;
-            notes.SetText(WALLET_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Pencil)
-        {
-            currentItemSprite.sprite = pencil;
-            notes.SetText(PENCIL_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Phone)
-        {
-            currentItemSprite.sprite = phone;
-            notes.SetText(PHONE_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Glasses)
-        {
-            currentItemSprite.sprite = glasses;
-            notes.SetText(GLASSES_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Umbrella)
-        {
-            currentItemSprite.sprite = unbrella;
-            notes.SetText(UMBRELLA_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.ID)
-        {
-            currentItemSprite.sprite = ID;
-            notes.SetText(ID_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Keys)
-        {
-            currentItemSprite.sprite = Keys;
-            notes.SetText(KEYS_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Eraser)
-        {
-            currentItemSprite.sprite = Eraser;
-            notes.SetText(ERASER_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Child)
-        {
-            currentItemSprite.sprite = Child;
-            notes.SetText(CHILD_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Globe)
-        {
-            currentItemSprite.sprite = Globe;
-            notes.SetText(GLOBE_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Book)
-        {
-            currentItemSprite.sprite = Book;
-            notes.SetText(BOOK_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Plant)
-        {
-            currentItemSprite.sprite = Plant;
-            notes.SetText(PLANT_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Thermus)
-        {
-            currentItemSprite.sprite = Thermus;
-            notes.SetText(THERMUS_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Calculator)
-        {
-            currentItemSprite.sprite = Calculator;
-            notes.SetText(CALCULATOR_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Knife)
-        {
-            currentItemSprite.sprite = Knife;
-            notes.SetText(KNIFE_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Scissors)
-        {
-            currentItemSprite.sprite = Scissors;
-            notes.SetText(SCISSORS_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Mug)
-        {
-            currentItemSprite.sprite = Mug;
-            notes.SetText(MUG_NOTES);
-        }
-        else if (ammoType == Ammo.AmmoType.Dodgeball)
-        {
-            currentItemSprite.sprite = Dodgeball;
-        }
-        else if (ammoType == Ammo.AmmoType.FidgetSpinner)
-        {
-            currentItemSprite.sprite = FidgetSpinner;
-        }
-        else if (ammoType == Ammo.AmmoType.RubberChicken)
-        {
-            currentItemSprite.sprite = RubberChicken;
-        }
-        else if (ammoType == Ammo.AmmoType.EarBuds)
-        {
-            currentItemSprite.sprite = EarBuds;
-        }
-        else if (ammoType == Ammo.AmmoType.FoamSword)
-        {
-            currentItemSprite.sprite = FoamSword;
-        }
-        else if (ammoType == Ammo.AmmoType.StickySoda)
-        {
-            currentItemSprite.sprite = StickySoda;
-        }
-        else if (ammoType == Ammo.AmmoType.LunchMoney)
-        {
-            currentItemSprite.sprite = LunchMoneySprite;
+            currentItemSprite.sprite = empty;
         }
     }
+
+    //public void UpdateUI(Ammo.AmmoType ammoType)
+    //{
+    //    if (ammoType == Ammo.AmmoType.WaterBottle)
+    //    {
+    //        currentItemSprite.sprite = waterBottle;
+    //        notes.SetText(WATER_BOTTLE_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Wallet)
+    //    {
+    //        currentItemSprite.sprite = wallet;
+    //        notes.SetText(WALLET_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Pencil)
+    //    {
+    //        currentItemSprite.sprite = pencil;
+    //        notes.SetText(PENCIL_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Phone)
+    //    {
+    //        currentItemSprite.sprite = phone;
+    //        notes.SetText(PHONE_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Glasses)
+    //    {
+    //        currentItemSprite.sprite = glasses;
+    //        notes.SetText(GLASSES_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Umbrella)
+    //    {
+    //        currentItemSprite.sprite = unbrella;
+    //        notes.SetText(UMBRELLA_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.ID)
+    //    {
+    //        currentItemSprite.sprite = ID;
+    //        notes.SetText(ID_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Keys)
+    //    {
+    //        currentItemSprite.sprite = Keys;
+    //        notes.SetText(KEYS_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Eraser)
+    //    {
+    //        currentItemSprite.sprite = Eraser;
+    //        notes.SetText(ERASER_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Child)
+    //    {
+    //        currentItemSprite.sprite = Child;
+    //        notes.SetText(CHILD_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Globe)
+    //    {
+    //        currentItemSprite.sprite = Globe;
+    //        notes.SetText(GLOBE_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Book)
+    //    {
+    //        currentItemSprite.sprite = Book;
+    //        notes.SetText(BOOK_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Plant)
+    //    {
+    //        currentItemSprite.sprite = Plant;
+    //        notes.SetText(PLANT_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Thermus)
+    //    {
+    //        currentItemSprite.sprite = Thermus;
+    //        notes.SetText(THERMUS_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Calculator)
+    //    {
+    //        currentItemSprite.sprite = Calculator;
+    //        notes.SetText(CALCULATOR_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Knife)
+    //    {
+    //        currentItemSprite.sprite = Knife;
+    //        notes.SetText(KNIFE_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Scissors)
+    //    {
+    //        currentItemSprite.sprite = Scissors;
+    //        notes.SetText(SCISSORS_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Mug)
+    //    {
+    //        currentItemSprite.sprite = Mug;
+    //        notes.SetText(MUG_NOTES);
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Dodgeball)
+    //    {
+    //        currentItemSprite.sprite = Dodgeball;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.FidgetSpinner)
+    //    {
+    //        currentItemSprite.sprite = FidgetSpinner;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.RubberChicken)
+    //    {
+    //        currentItemSprite.sprite = RubberChicken;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.EarBuds)
+    //    {
+    //        currentItemSprite.sprite = EarBuds;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.FoamSword)
+    //    {
+    //        currentItemSprite.sprite = FoamSword;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.StickySoda)
+    //    {
+    //        currentItemSprite.sprite = StickySoda;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.LunchMoney)
+    //    {
+    //        currentItemSprite.sprite = LunchMoneySprite;
+    //    }
+    //    else if (ammoType == Ammo.AmmoType.Apple)
+    //    {
+    //        currentItemSprite.sprite = Apple;
+    //    }
+    //}
 
     void OpenJournal()
     {

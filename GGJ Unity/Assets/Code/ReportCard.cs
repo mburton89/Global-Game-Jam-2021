@@ -106,7 +106,7 @@ public class ReportCard : MonoBehaviour
         //ZombieSpawner zombieSpawner = FindObjectOfType<ZombieSpawner>();
         //zombieSpawner.EndWave();
 
-        //yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);
         waveCoverImage.DOFade(1, 1);
         waveNotes.SetText("Get ready for wave " + (PlayerPrefs.GetInt("Wave") + 1).ToString());
         waveNotes.DOFade(1, 1);

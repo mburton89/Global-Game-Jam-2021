@@ -42,7 +42,10 @@ public class Timer : MonoBehaviour
                 GameSoundManager.Instance.SchoolBell.Play();
                 _canCountDown = false;
                 //ReportCard.Instance.ShowYouWin();
-                PostWaveMenu.Instance.Activate();
+                //PostWaveMenu.Instance.Activate();
+
+                ReportCard.Instance.ShowYouWin();
+                ReportCard.Instance.ShowWaveTransition();
 
                 Zombie[] zombies = FindObjectsOfType<Zombie>();
                 foreach (Zombie zombie in zombies)

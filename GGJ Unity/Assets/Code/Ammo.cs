@@ -15,6 +15,7 @@ public class Ammo : MonoBehaviour
     public float windResistance;
     public float timeToLive;
 
+    public Sprite sketch;
     public Sprite destroyedSprite;
     public SpriteRenderer spriteRenderer;
 
@@ -49,7 +50,8 @@ public class Ammo : MonoBehaviour
         StickySoda,
         FoamSword,
         EarBuds,
-        LunchMoney
+        LunchMoney,
+        Apple
     }
 
     public AmmoType ammoType;
