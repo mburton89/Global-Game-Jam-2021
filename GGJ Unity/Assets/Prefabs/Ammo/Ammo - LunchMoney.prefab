@@ -249,7 +249,10 @@ MonoBehaviour:
   - {fileID: 8370365140805603251, guid: 3ca26fe4da6e0ad41a919197b7092429, type: 3}
   - {fileID: 8370365140805603251, guid: 6f59d1f2b87b63443854d25300fc9050, type: 3}
   - {fileID: 8370365140805603251, guid: 3ca26fe4da6e0ad41a919197b7092429, type: 3}
-  randomness: 5
+  - {fileID: 8370365140805603251, guid: 6f59d1f2b87b63443854d25300fc9050, type: 3}
+  - {fileID: 8370365140805603251, guid: 5f982825f0dbf8943963a6c83eec4e4c, type: 3}
+  - {fileID: 8370365140805603251, guid: 3ca26fe4da6e0ad41a919197b7092429, type: 3}
+  randomness: 10
 --- !u!82 &576798425161352955
 AudioSource:
   m_ObjectHideFlags: 0
