@@ -24,6 +24,10 @@ public class Ammo : MonoBehaviour
     private int _zombiesHit;
     private bool _hasHitZombie;
 
+    bool hasDoubleKilled;
+    bool hasTripleKilled;
+    bool hasQuadroupleKilled;
+
     public enum AmmoType
     {
         WaterBottle,
@@ -144,13 +148,20 @@ public class Ammo : MonoBehaviour
             }
         }
 
-        if (_zombiesHit == 2)
+        if (_zombiesHit == 2 && !hasDoubleKilled)
         {
             ReportCard.Instance.ShowDoubleKill();
+            hasDoubleKilled = true;
         }
-        else if (_zombiesHit == 3)
+        else if (_zombiesHit == 3 && !hasTripleKilled)
         {
             ReportCard.Instance.ShowTripleKill();
+            hasTripleKilled = true;
+        }
+        else if (_zombiesHit == 4 && !hasQuadroupleKilled)
+        {
+            ReportCard.Instance.ShowQuadroupleKill();
+            hasQuadroupleKilled = true;
         }
     }
 
@@ -166,6 +177,7 @@ public class Ammo : MonoBehaviour
                 _hasHitZombie = true;
                 PlayHitSoundAndExplode();
                 PostWaveMenu.Instance.itemsHit++;
+                _zombiesHit++;
                 if (ammoType == AmmoType.Glasses)
                 {
                     zombie.WearSunglasses();
@@ -194,6 +206,22 @@ public class Ammo : MonoBehaviour
             }
         }
 
+        if (_zombiesHit == 2 && !hasDoubleKilled)
+        {
+            ReportCard.Instance.ShowDoubleKill();
+            hasDoubleKilled = true;
+        }
+        else if (_zombiesHit == 3 && !hasTripleKilled)
+        {
+            ReportCard.Instance.ShowTripleKill();
+            hasTripleKilled = true;
+        }
+        else if (_zombiesHit == 4 && !hasQuadroupleKilled)
+        {
+            ReportCard.Instance.ShowQuadroupleKill();
+            hasQuadroupleKilled = true;
+        }
+
         bounces--;
         if (bounces < 1)
         {
@@ -220,8 +248,6 @@ public class Ammo : MonoBehaviour
             rigidbody2D.angularDrag = rigidbody2D.angularDrag = 0.2f;
         }
     }
-
-
 
     void PlayHitSoundAndExplode()
     {

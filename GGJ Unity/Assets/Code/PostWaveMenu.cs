@@ -105,4 +105,12 @@ public class PostWaveMenu : MonoBehaviour
             gradeText.SetText("F");
         }
     }
+
+    void DetermineMoney()
+    {
+        float moneyToGive1 = (float)SlingShotManager.instance.ammosRemaining / 100f;
+        MoneyManager.Instance.AddMoney(moneyToGive1);
+        float moneyToGive2 = (float)PlayerPrefs.GetInt("Wave") / 100f;
+        MoneyManager.Instance.AddMoney(moneyToGive2);
+    }
 }

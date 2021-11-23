@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaterSplode : MonoBehaviour
 {
     public Collider2D collider;
+    bool hasKilled;
 
     void Start()
     {
@@ -18,6 +19,11 @@ public class WaterSplode : MonoBehaviour
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             zombie.TakeDamage(2);
             HitStreakManager.Instance.AddToCurrentHitStreak();
+            if (!hasKilled)
+            {
+                ReportCard.Instance.ShowDoubleKill();
+                hasKilled = true;
+            }
         }
     }
 }

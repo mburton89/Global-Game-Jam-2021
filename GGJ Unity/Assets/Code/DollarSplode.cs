@@ -6,6 +6,7 @@ public class DollarSplode : MonoBehaviour
 {
     public List<Rigidbody2D> dollarPrefabs;
     public Collider2D collider;
+    bool hasKilled;
 
     void Start()
     {
@@ -32,6 +33,12 @@ public class DollarSplode : MonoBehaviour
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             zombie.TakeDamage(2);
             HitStreakManager.Instance.AddToCurrentHitStreak();
+            ReportCard.Instance.ShowDoubleKill();
+            if (!hasKilled)
+            {
+                ReportCard.Instance.ShowDoubleKill();
+                hasKilled = true;
+            }
         }
     }
 }
