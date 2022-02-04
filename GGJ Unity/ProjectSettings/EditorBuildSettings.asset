@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: 8fe002536e925234aa6e21b888ce9061
+    path: Assets/Intro Projector.unity
+    guid: 9563a4660f351ce468f4beb210953efd
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 6c71edc69316b1244ad3b00ad7bff0c1
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestSlingshot.unity
     guid: 8767ce4f59e61436bab7f90c5ba3aa57
+  - enabled: 0
+    path: Assets/Scenes/Intro.unity
+    guid: 8fe002536e925234aa6e21b888ce9061
   m_configObjects: {}
