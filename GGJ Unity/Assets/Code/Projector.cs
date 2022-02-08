@@ -23,9 +23,18 @@ public class Projector : MonoBehaviour
     int currentSlideIndex;
     bool canGoToNextSlide;
 
+    [SerializeField] Image fadeOverlay;
+
     private void Awake()
     {
         canGoToNextSlide = true;
+        fadeOverlay.DOFade(1, 0);
+    }
+
+    private void Start()
+    {
+        fadeOverlay.DOFade(0, 1f);
+        StartCoroutine(nameof(TypeSentence));
     }
 
     void OnEnable()
@@ -42,9 +51,12 @@ public class Projector : MonoBehaviour
 
     void GoToNextSlide()
     {
-        if (currentSlideIndex < slides.Count - 1 && canGoToNextSlide)
+        if (currentSlideIndex < slides.Count - 1)
         {
-            StartCoroutine(nameof(GoToNextSlideCo));
+            if (canGoToNextSlide)
+            {
+                StartCoroutine(nameof(GoToNextSlideCo));
+            }
         }
         else
         {
@@ -60,11 +72,19 @@ public class Projector : MonoBehaviour
         nextSlideAudioSource.Play();
         slides[currentSlideIndex].DOFade(0.33f, .1f);
         projectorPivot.DORotate(new Vector3(0, 0, projectorPivot.eulerAngles.z - 30), secondsToSwitchSlides, RotateMode.Fast).SetEase(ease);
+
+
+        StopCoroutine(nameof(TypeSentence));
+        captionText.text = "";
+
         yield return new WaitForSeconds(secondsToSwitchSlides);
+
         currentSlideIndex++;
+        StartCoroutine(nameof(TypeSentence));
+
         lightFlicker.localScale = Vector3.one;
         slides[currentSlideIndex].DOFade(1f, .1f);
-        captionText.SetText(captions[currentSlideIndex]);
+        //captionText.SetText(captions[currentSlideIndex]);
         slideClips[currentSlideIndex].Play();
         yield return new WaitForSeconds(.1f);
         canGoToNextSlide = true;
@@ -72,6 +92,24 @@ public class Projector : MonoBehaviour
 
     void Skip()
     {
+        StartCoroutine(FadeAndSkip());
+    }
+
+    private IEnumerator FadeAndSkip()
+    {
+        PlayerPrefs.SetInt("hasSeenIntro", 1);
+        fadeOverlay.DOFade(1, 1);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    IEnumerator TypeSentence()
+    {
+        string sentence = captions[currentSlideIndex];
+        foreach (char letter in sentence.ToCharArray())
+        {
+            captionText.text += letter;
+            yield return new WaitForSeconds(0.02f);
+        }
     }
 }

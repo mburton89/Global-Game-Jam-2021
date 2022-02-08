@@ -20,6 +20,13 @@ public class MainMenu : MonoBehaviour
     {
         loadingContainer.SetActive(true);
         buttonClick.Play();
-        SceneManager.LoadScene(2);
+        if (PlayerPrefs.GetInt("hasSeenIntro") == 1)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
