@@ -219,7 +219,7 @@ MonoBehaviour:
   rigidbody2D: {fileID: 8370365140805603214}
   collider: {fileID: 8370365140805603249}
   mass: 1
-  damageToGive: 0.1
+  damageToGive: 0.34
   bounces: 1
   canImpale: 0
   windResistance: 0.2

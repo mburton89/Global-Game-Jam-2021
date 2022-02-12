@@ -157,6 +157,11 @@ public class Ammo : MonoBehaviour
         {
             ReportCard.Instance.ShowTripleKill();
             hasTripleKilled = true;
+
+            if (ammoType == AmmoType.Pencil)
+            {
+                AssignmentsManager.Instance.CompleteTripleSharpKillAssignment();
+            }
         }
         else if (_zombiesHit == 4 && !hasQuadroupleKilled)
         {
@@ -172,7 +177,7 @@ public class Ammo : MonoBehaviour
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             if (_canGiveDamage)
             {
-                zombie.TakeDamage(damageToGive);
+                zombie.TakeDamage(damageToGive, ammoType);
                 HitStreakManager.Instance.AddToCurrentHitStreak();
                 _hasHitZombie = true;
                 PlayHitSoundAndExplode();
@@ -220,6 +225,11 @@ public class Ammo : MonoBehaviour
         {
             ReportCard.Instance.ShowQuadroupleKill();
             hasQuadroupleKilled = true;
+
+            if (ammoType == AmmoType.Dodgeball)
+            {
+                AssignmentsManager.Instance.CompleteQuadroupleDodgeballKillAssignment();
+            }
         }
 
         bounces--;

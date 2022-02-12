@@ -104,8 +104,6 @@ public class Zombie : MonoBehaviour
     {
         currentHealth = currentHealth - damageToTake;
 
-
-
         if (currentHealth <= 0)
         {
             Splode();
@@ -113,6 +111,24 @@ public class Zombie : MonoBehaviour
         else
         {
             walkSpeed = walkSpeed /2f;
+        }
+    }
+
+    public void TakeDamage(float damageToTake, Ammo.AmmoType ammoType)
+    {
+        currentHealth = currentHealth - damageToTake;
+
+        if (currentHealth <= 0)
+        {
+            if (ammoType == Ammo.AmmoType.Eraser)
+            {
+                AssignmentsManager.Instance.CompleteEraserKillAssignment();
+            }
+            Splode();
+        }
+        else
+        {
+            walkSpeed = walkSpeed / 2f;
         }
     }
 

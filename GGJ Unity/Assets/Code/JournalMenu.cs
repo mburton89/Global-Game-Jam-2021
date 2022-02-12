@@ -73,6 +73,8 @@ public class JournalMenu : MonoBehaviour
 
     void HandleAssignmentsPressed()
     {
+        AssignmentsManager.Instance.DetermineAssignmentStatus();
+
         howToPlayButton.transform.SetAsFirstSibling();
         itemsButton.transform.SetAsFirstSibling();
         assignmentsButton.transform.SetAsLastSibling();

@@ -34,6 +34,7 @@ public class DollarSplode : MonoBehaviour
             zombie.TakeDamage(2);
             HitStreakManager.Instance.AddToCurrentHitStreak();
             ReportCard.Instance.ShowDoubleKill();
+            AssignmentsManager.Instance.CompleteDoubleSplodeKillAssignment();
             if (!hasKilled)
             {
                 ReportCard.Instance.ShowDoubleKill();
