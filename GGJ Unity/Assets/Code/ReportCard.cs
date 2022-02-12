@@ -35,7 +35,7 @@ public class ReportCard : MonoBehaviour
         Grade.SetText("A-");
         Notes.SetText("Double Kill!");
         Shake();
-        MoneyManager.Instance.AddMoney(.02f);
+        //MoneyManager.Instance.AddMoney(.02f);
     }
 
     public void ShowTripleKill()
@@ -43,7 +43,7 @@ public class ReportCard : MonoBehaviour
         Grade.SetText("A+");
         Notes.SetText("Triple Kill!");
         Shake();
-        MoneyManager.Instance.AddMoney(.03f);
+        //MoneyManager.Instance.AddMoney(.03f);
     }
 
     public void ShowQuadroupleKill()
@@ -51,7 +51,7 @@ public class ReportCard : MonoBehaviour
         Grade.SetText("A+");
         Notes.SetText("Quadrouple Kill!");
         Shake();
-        MoneyManager.Instance.AddMoney(.04f);
+        //MoneyManager.Instance.AddMoney(.04f);
     }
 
     public void ShowChaching()
@@ -103,9 +103,9 @@ public class ReportCard : MonoBehaviour
     public void ShowWaveTransition()
     {
         float moneyToGive1 = (float)SlingShotManager.instance.ammosRemaining / 100f;
-        MoneyManager.Instance.AddMoney(moneyToGive1);
+        //MoneyManager.Instance.AddMoney(moneyToGive1);
         float moneyToGive2 = (float)PlayerPrefs.GetInt("Wave") / 100f;
-        MoneyManager.Instance.AddMoney(moneyToGive2);
+        //MoneyManager.Instance.AddMoney(moneyToGive2);
         StartCoroutine(ShowWaveTransitionCo());
     }
 
