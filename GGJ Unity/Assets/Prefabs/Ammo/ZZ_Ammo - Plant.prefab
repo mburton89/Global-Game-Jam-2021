@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2774279362369378482}
   - component: {fileID: 2774279362369378485}
   m_Layer: 0
-  m_Name: Ammo - Plant
+  m_Name: ZZ_Ammo - Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &2774279362369378482
 CircleCollider2D:
@@ -141,9 +141,11 @@ MonoBehaviour:
   bounces: 1
   canImpale: 0
   windResistance: 0
+  timeToLive: 0
+  sketch: {fileID: 0}
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 2774279363220223127}
-  canBounce: 0
+  hitSound: {fileID: 0}
   ammoType: 13
 --- !u!1 &2774279363220223126
 GameObject:

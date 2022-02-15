@@ -179,14 +179,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.6
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 3bbd3482c0be77640995fdbfa43202c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &2802250293203007331
 CircleCollider2D:
@@ -218,9 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 2802250293203007328}
   collider: {fileID: 2802250293203007331}
-  mass: 1
+  mass: 0.6
   damageToGive: 1
-  bounces: 10
+  bounces: 12
   canImpale: 0
   windResistance: 0
   timeToLive: 6

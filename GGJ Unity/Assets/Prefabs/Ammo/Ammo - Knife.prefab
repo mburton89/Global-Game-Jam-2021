@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &1473123600659781143
 CircleCollider2D:
@@ -142,6 +142,7 @@ MonoBehaviour:
   canImpale: 1
   windResistance: 0.1
   timeToLive: 2.3
+  sketch: {fileID: 0}
   destroyedSprite: {fileID: 0}
   spriteRenderer: {fileID: 1473123601656480669}
   hitSound: {fileID: 8300000, guid: a00e4ee53175e704ca89c059b7893013, type: 3}

@@ -3503,7 +3503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251091284}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 23.75, y: 0.8, z: 0}
+  m_LocalPosition: {x: 28.1, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1708979576}
@@ -3533,7 +3533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 48.2, y: 1}
+  m_Size: {x: 48.2, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &252193366
 GameObject:
@@ -4362,7 +4362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373599476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27, y: 24.35, z: 0}
+  m_LocalPosition: {x: -0.27, y: 28.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1708979576}
@@ -4392,7 +4392,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 48.2, y: 1.89}
+  m_Size: {x: 48.2, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &374176467
 GameObject:
@@ -11082,7 +11082,7 @@ MonoBehaviour:
   - {fileID: 6492957280882520975, guid: 146dd82d0de36e84a9b3d6a23eb90517, type: 3}
   - {fileID: 5627763928889152199, guid: a1bc67f030b0e4f4bb0ff5d876e85d6c, type: 3}
   - {fileID: 3422803835033888889, guid: 4cfacc4d4765d8f4aafc0ff2e48c036e, type: 3}
-  - {fileID: 2802250293203007330, guid: 08604411b17e2441ea3618b1ddcdcbd0, type: 3}
+  - {fileID: 2802250293203007330, guid: 87a8391d09ba28d44932568050b92529, type: 3}
   - {fileID: 8370365140805603248, guid: 0a2d6d5a5d9748849b4c7b9fd1f362d8, type: 3}
   - {fileID: 8370365140805603248, guid: cff697bce6d574446867d1c3f200202a, type: 3}
   - {fileID: 9123784566502923826, guid: 7a87bd425debdaa478747f23f5ff5c81, type: 3}
@@ -15662,7 +15662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237506265}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -24.47, y: 0.75, z: 0}
+  m_LocalPosition: {x: -28.8, y: 0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1708979576}
@@ -15692,7 +15692,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 48.2, y: 1}
+  m_Size: {x: 48.2, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &1241954211
 GameObject:
