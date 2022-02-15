@@ -33,6 +33,16 @@ public class HitStreakManager : MonoBehaviour
             bestHitStreakText.SetText(currentHitStreak.ToString());
         }
         currentHitStreakText.SetText(currentHitStreak.ToString());
+
+        if (currentHitStreak == 50)
+        {
+            AssignmentsManager.Instance.CompleteHitstreak50Assignment();
+        }
+
+        if (currentHitStreak == 100)
+        {
+            AssignmentsManager.Instance.CompleteHitstreak100Assignment();
+        }
     }
 
     public void Reset()

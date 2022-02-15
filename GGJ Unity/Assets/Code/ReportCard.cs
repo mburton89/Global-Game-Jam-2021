@@ -128,6 +128,17 @@ public class ReportCard : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         PlayerPrefs.SetInt("Wave", PlayerPrefs.GetInt("Wave") + 1);
+
+        if (PlayerPrefs.GetInt("Wave") == 10)
+        {
+            AssignmentsManager.Instance.CompleteWave10Assignment();
+        }
+
+        if (PlayerPrefs.GetInt("Wave") == 20)
+        {
+            AssignmentsManager.Instance.CompleteWave20Assignment();
+        }
+
         yield return new WaitForSeconds(2f);
 
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);

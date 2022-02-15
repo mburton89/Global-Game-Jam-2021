@@ -18,7 +18,6 @@ public class WaterSplode : MonoBehaviour
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
             zombie.TakeDamage(2);
-            //AssignmentsManager.Instance.CompleteDoubleSplodeKillAssignment();
             HitStreakManager.Instance.AddToCurrentHitStreak();
             if (!hasKilled)
             {

@@ -45,6 +45,16 @@ public class SlingShotManager : MonoBehaviour
         _ammoIndex = 0;
         //RandomizeOrder();
         DetermineNextAmmo();
+
+        if (PlayerPrefs.GetInt("Wave10Assignment") == 1)
+        {
+            speed = speed + (speed * .2f);
+        }
+
+        if (PlayerPrefs.GetInt("Wave20Assignment") == 1)
+        {
+            speed = speed + (speed * .2f);
+        }
     }
 
     void Update()
@@ -57,7 +67,7 @@ public class SlingShotManager : MonoBehaviour
 
     public void setPath(bool b)
     {
-        float yPos = (aimer.up.y * 1.1f) / points.Length;
+        float yPos = ((aimer.up.y * 1.5f) / points.Length);
         float val = yPos;
         for (int i = 0; i < points.Length; i++)
         {

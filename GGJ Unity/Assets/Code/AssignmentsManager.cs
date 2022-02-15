@@ -15,16 +15,19 @@ public class AssignmentsManager : MonoBehaviour
     [SerializeField] GameObject wave10Checkmark;
     [SerializeField] GameObject wave20Checkmark;
 
-    const string SINGLE_ERASER_ASSIGNMENT = "SingleEraserAssignment";
-    const string DOUBLE_SPLODES_ASSIGNMENT = "DoubleSplodeAssignment";
-    const string TRIPLE_SHARP_ASSIGNMENT = "TripleSharpAssignment";
-    const string QUADROUPLE_DODGEBALL_ASSIGNMENT = "QuadroupleDodgeballAssignment";
-    const string HITSTREAK_50_ASSIGNMENT = "Hitstreak50";
-    const string HITSTREAK_100_ASSIGNMENT = "Hitstreak100";
-    const string WAVE_10_ASSIGNMENT = "Wave10Assignment";
-    const string WAVE_20_ASSIGNMENT = "Wave20Assignment";
+    [HideInInspector] public const string SINGLE_ERASER_ASSIGNMENT = "SingleEraserAssignment";
+    [HideInInspector] public const string DOUBLE_SPLODES_ASSIGNMENT = "DoubleSplodeAssignment";
+    [HideInInspector] public const string TRIPLE_SHARP_ASSIGNMENT = "TripleSharpAssignment";
+    [HideInInspector] public const string QUADROUPLE_DODGEBALL_ASSIGNMENT = "QuadroupleDodgeballAssignment";
+    [HideInInspector] public const string HITSTREAK_50_ASSIGNMENT = "Hitstreak50";
+    [HideInInspector] public const string HITSTREAK_100_ASSIGNMENT = "Hitstreak100";
+    [HideInInspector] public const string WAVE_10_ASSIGNMENT = "Wave10Assignment";
+    [HideInInspector] public const string WAVE_20_ASSIGNMENT = "Wave20Assignment";
 
     [SerializeField] AudioSource assignmentCompleteSound;
+
+    [SerializeField] MeshRenderer aimer1;
+    [SerializeField] MeshRenderer aimer2;
 
     private void Awake()
     {
@@ -37,6 +40,11 @@ public class AssignmentsManager : MonoBehaviour
             Destroy(gameObject);
         }
         //PlayerPrefs.DeleteAll();
+    }
+
+    private void Start()
+    {
+        DetermineAssignmentStatus();
     }
 
     public void CompleteEraserKillAssignment()
@@ -81,21 +89,45 @@ public class AssignmentsManager : MonoBehaviour
 
     public void CompleteHitstreak50Assignment()
     {
-        PlayerPrefs.SetInt(HITSTREAK_50_ASSIGNMENT, 1);
+        if (PlayerPrefs.GetInt(HITSTREAK_50_ASSIGNMENT) != 1)
+        {
+            PlayerPrefs.SetInt(HITSTREAK_50_ASSIGNMENT, 1);
+            assignmentCompleteSound.Play();
+            aimer1.enabled = true;
+            aimer2.enabled = true;
+        }
     }
 
     public void CompleteHitstreak100Assignment()
     {
+        if (PlayerPrefs.GetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT) != 1)
+        {
+            PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
+            assignmentCompleteSound.Play();
+            //TODO Add 5th line to aiming
+        }
         PlayerPrefs.SetInt(HITSTREAK_100_ASSIGNMENT, 1);
     }
 
     public void CompleteWave10Assignment()
     {
+        if (PlayerPrefs.GetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT) != 1)
+        {
+            PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
+            assignmentCompleteSound.Play();
+            //TODO Make Items Sway less
+        }
         PlayerPrefs.SetInt(WAVE_10_ASSIGNMENT, 1);
     }
 
     public void CompleteWave20Assignment()
     {
+        if (PlayerPrefs.GetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT) != 1)
+        {
+            PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
+            assignmentCompleteSound.Play();
+            //TODO Increase Slingshot Speed
+        }
         PlayerPrefs.SetInt(WAVE_20_ASSIGNMENT, 1);
     }
 
@@ -128,6 +160,8 @@ public class AssignmentsManager : MonoBehaviour
         if (PlayerPrefs.GetInt(WAVE_10_ASSIGNMENT) == 1)
         {
             wave10Checkmark.SetActive(true);
+            aimer1.enabled = true;
+            aimer2.enabled = true;
         }
         if (PlayerPrefs.GetInt(WAVE_20_ASSIGNMENT) == 1)
         {

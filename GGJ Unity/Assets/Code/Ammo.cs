@@ -55,7 +55,11 @@ public class Ammo : MonoBehaviour
         FoamSword,
         EarBuds,
         LunchMoney,
-        Apple
+        Apple,
+        LuckyEraser,
+        PhatWallet,
+        PackOfPencils,
+        SuperDodgeball
     }
 
     public AmmoType ammoType;
@@ -96,7 +100,6 @@ public class Ammo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("hi" + gameObject.name);
         if (collision.gameObject.GetComponent<Zombie>())
         {
             Zombie zombie = collision.gameObject.GetComponent<Zombie>();
@@ -282,11 +285,35 @@ public class Ammo : MonoBehaviour
             //Destroy(dollarSplode.gameObject, 3);
             ReportCard.Instance.ShowChaching();
         }
+        else if (ammoType == AmmoType.PhatWallet)
+        {
+            //Instantiate(Resources.Load("MoneyExplosion") as GameObject, transform.position, transform.rotation, null);
+            DollarSplode dollarSplode = Instantiate(Resources.Load("DollarSplode"), transform.position, transform.rotation, null) as DollarSplode;
+            //Destroy(dollarSplode.gameObject, 3);
+            ReportCard.Instance.ShowChaching();
+            GetComponent<LunchMoney>().enabled = true;
+        }
         else if (ammoType == AmmoType.Eraser)
         {
             DollarSplode dollarSplode = Instantiate(Resources.Load("PuffSplode"), transform.position, transform.rotation, null) as DollarSplode;
             ReportCard.Instance.Lol();
         }
+        else if (ammoType == AmmoType.LuckyEraser)
+        {
+            DollarSplode dollarSplode = Instantiate(Resources.Load("PuffSplode"), transform.position, transform.rotation, null) as DollarSplode;
+            ReportCard.Instance.Lol();
+            //int rand = Random.Range(0, 1);
+            //if (rand == 0)
+            //{
+                Zombie[] zombies = FindObjectsOfType<Zombie>();
+                if (zombies == null) return;
+                foreach (Zombie zombie in zombies)
+                {
+                    zombie.Splode();
+                }
+            //}
+        }
+
     }
 
     private void OnDestroy()
