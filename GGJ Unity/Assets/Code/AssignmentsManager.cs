@@ -104,7 +104,6 @@ public class AssignmentsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
             assignmentCompleteSound.Play();
-            //TODO Add 5th line to aiming
         }
         PlayerPrefs.SetInt(HITSTREAK_100_ASSIGNMENT, 1);
     }
@@ -115,7 +114,6 @@ public class AssignmentsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
             assignmentCompleteSound.Play();
-            //TODO Make Items Sway less
         }
         PlayerPrefs.SetInt(WAVE_10_ASSIGNMENT, 1);
     }
@@ -126,7 +124,6 @@ public class AssignmentsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(QUADROUPLE_DODGEBALL_ASSIGNMENT, 1);
             assignmentCompleteSound.Play();
-            //TODO Increase Slingshot Speed
         }
         PlayerPrefs.SetInt(WAVE_20_ASSIGNMENT, 1);
     }

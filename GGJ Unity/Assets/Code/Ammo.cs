@@ -91,7 +91,7 @@ public class Ammo : MonoBehaviour
             {
                 rigidbody2D.AddTorque(38);
             }
-            if (_canGiveDamage)
+            if (_canGiveDamage && PlayerPrefs.GetInt("Hitstreak100") != 1)
             {
                 rigidbody2D.AddForce(new Vector2(windResistance, 0));
             }

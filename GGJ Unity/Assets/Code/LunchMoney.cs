@@ -17,6 +17,7 @@ public class LunchMoney : MonoBehaviour
             newCoin.GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x + randX, GetComponent<Rigidbody2D>().velocity.y + randY);
             //coin.GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity;
             //newCoin.GetComponent<Rigidbody2D>().velocity = new Vector2(randX, 19);
+            Destroy(newCoin, 2.5f);
         }
     }
 }

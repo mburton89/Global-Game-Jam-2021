@@ -25,6 +25,8 @@ public class Projector : MonoBehaviour
 
     [SerializeField] Image fadeOverlay;
 
+    [SerializeField] GameObject tapIndicator;
+
     private void Awake()
     {
         canGoToNextSlide = true;
@@ -51,6 +53,8 @@ public class Projector : MonoBehaviour
 
     void GoToNextSlide()
     {
+        tapIndicator.SetActive(false);
+
         if (currentSlideIndex < slides.Count - 1)
         {
             if (canGoToNextSlide)

@@ -8,6 +8,18 @@ public class SlingShotManager : MonoBehaviour
     public GameObject ball;
 
     public List<Ammo> ammos;
+    public Ammo eraserAmmo;
+    public Ammo eraserAmmoU;
+    public Ammo walletAmmo;
+    public Ammo walletAmmoU;
+    public Ammo pencilAmmo;
+    public Ammo pencilAmmoU;
+    public Ammo dodgeballAmmo;
+    public Ammo dodgeballAmmoU;
+
+    [SerializeField] MeshRenderer aimLine4a;
+    [SerializeField] MeshRenderer aimLine4b;
+
     private int _ammoIndex = 0;
     public Ammo nextAmmo;
 
@@ -30,6 +42,7 @@ public class SlingShotManager : MonoBehaviour
 
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
         if (PlayerPrefs.GetInt("Wave") == 1)
         {
             PlayerPrefs.SetInt("ItemsRemaining", 20);
@@ -44,6 +57,7 @@ public class SlingShotManager : MonoBehaviour
 
         _ammoIndex = 0;
         //RandomizeOrder();
+        DetermineUnlockables();
         DetermineNextAmmo();
 
         if (PlayerPrefs.GetInt("Wave10Assignment") == 1)
@@ -133,6 +147,42 @@ public class SlingShotManager : MonoBehaviour
         }
     }
 
+    void DetermineUnlockables()
+    {
+        if (PlayerPrefs.GetInt("SingleEraserAssignment") == 1)
+        {
+            ammos[0] = eraserAmmoU;
+        }
+        if (PlayerPrefs.GetInt("DoubleSplodeAssignment") == 1)
+        {
+            ammos[1] = walletAmmoU;
+        }
+        if (PlayerPrefs.GetInt("TripleSharpAssignment") == 1)
+        {
+            ammos[2] = pencilAmmoU;
+        }
+        if (PlayerPrefs.GetInt("QuadroupleDodgeballAssignment") == 1)
+        {
+            ammos[3] = dodgeballAmmoU;
+        }
+        if (PlayerPrefs.GetInt("Hitstreak50") == 1)
+        {
+            aimLine4a.enabled = true;
+            aimLine4b.enabled = true;
+        }
+        //if (PlayerPrefs.GetInt("Hitstreak100") == 1)
+        //{
+            
+        //}
+        if (PlayerPrefs.GetInt("Wave10Assignment") == 1)
+        {
+            speed = 23f;
+        }
+        if (PlayerPrefs.GetInt("Wave20Assignment") == 1)
+        {
+            speed = 29f;
+        }
+    }
     //void DetermineNextAmmo()
     //{
     //    _ammoIndex ++;
