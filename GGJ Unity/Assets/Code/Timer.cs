@@ -11,13 +11,13 @@ public class Timer : MonoBehaviour
     public float timeLeft;
     public TextMeshProUGUI timeText;
     private const string TIME_PREFIX = "00:";
-    private bool _canCountDown;
+    [HideInInspector] public bool canCountDown;
     public Button pause;
 
     private void Awake()
     {
         Instance = this;
-        _canCountDown = true;
+        canCountDown = true;
     }
 
     private void Start()
@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (_canCountDown)
+        if (canCountDown)
         {
             if (timeLeft <= 0)
             {
@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour
                 //GameSoundManager.Instance.Music.Stop();
                 GameSoundManager.Instance.Music.volume = GameSoundManager.Instance.Music.volume / 2;
                 GameSoundManager.Instance.SchoolBell.Play();
-                _canCountDown = false;
+                canCountDown = false;
                 //ReportCard.Instance.ShowYouWin();
                 //PostWaveMenu.Instance.Activate();
 

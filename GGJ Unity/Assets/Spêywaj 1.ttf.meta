@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 138d27997e5ec7f4f99c23e59578dd52
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Sp?ywaj
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 00afcf4c2d909084b82592c494828500, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
