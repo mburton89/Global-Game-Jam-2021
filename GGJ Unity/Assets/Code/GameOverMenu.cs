@@ -80,6 +80,8 @@ public class GameOverMenu : MonoBehaviour
         }
 
         highestWave.SetText(PlayerPrefs.GetInt("HighestWave").ToString());
+
+        PlayerPrefs.SetInt("Wave", 1);
     }
 
     void Restart()
@@ -92,7 +94,6 @@ public class GameOverMenu : MonoBehaviour
         buttonClick.Play();
         yield return new WaitForSeconds(.1f);
         GameSoundManager.Instance.Music.Play();
-        PlayerPrefs.SetInt("Wave", 1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

@@ -7,8 +7,9 @@ public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu Instance;
     public GameObject container;
-    public Button resume;
-    public Button exit;
+    public Button resumeButton;
+    public Button journalButton;
+    public Button exitButton;
     public GameObject drag;
     public GameObject slingshot;
     public AudioSource click;
@@ -20,14 +21,16 @@ public class PauseMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        resume.onClick.AddListener(Resume);
-        exit.onClick.AddListener(Exit);
+        resumeButton.onClick.AddListener(Resume);
+        journalButton.onClick.AddListener(ShowJournal);
+        exitButton.onClick.AddListener(Exit);
     }
 
     private void OnDisable()
     {
-        resume.onClick.RemoveListener(Resume);
-        exit.onClick.RemoveListener(Exit);
+        resumeButton.onClick.RemoveListener(Resume);
+        journalButton.onClick.RemoveListener(ShowJournal);
+        exitButton.onClick.RemoveListener(Exit);
     }
 
     public void Pause()
@@ -63,10 +66,15 @@ public class PauseMenu : MonoBehaviour
         click.Play();
     }
 
+    public void ShowJournal()
+    {
+        JournalMenu.Instance.Activate();
+    }
+
     void Exit()
     {
         Time.timeScale = 1;
         click.Play();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

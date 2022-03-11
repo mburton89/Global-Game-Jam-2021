@@ -16,9 +16,23 @@ public class JournalMenu : MonoBehaviour
     [SerializeField] GameObject itemsContainer;
     [SerializeField] GameObject assignmentsContainer;
 
+    [SerializeField] GameObject fakeExitButton;
+
     void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("hasSeenIntro") != 1)
+        {
+            Activate();
+            HandleHowToPlayPressed();
+            fakeExitButton.SetActive(true);
+            PlayerPrefs.SetInt("hasSeenIntro", 1);
+            Time.timeScale = 0;
+        }
     }
 
     private void OnEnable()

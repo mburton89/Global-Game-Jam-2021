@@ -101,7 +101,6 @@ public class Projector : MonoBehaviour
 
     private IEnumerator FadeAndSkip()
     {
-        PlayerPrefs.SetInt("hasSeenIntro", 1);
         fadeOverlay.DOFade(1, 1);
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

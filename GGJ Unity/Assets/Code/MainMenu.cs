@@ -10,10 +10,20 @@ public class MainMenu : MonoBehaviour
     public AudioSource buttonClick;
     public GameObject loadingContainer;
 
+    [SerializeField] GameObject diploma;
+
     private void Awake()
     {
         Instance = this;
-        PlayerPrefs.SetInt("Wave", 1);
+        //PlayerPrefs.DeleteAll();
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("Wave20Assignment") == 1)
+        {
+            diploma.SetActive(true);
+        }
     }
 
     public void Play()
@@ -26,6 +36,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
+            PlayerPrefs.SetInt("Wave", 1);
             SceneManager.LoadScene(1);
         }
     }
