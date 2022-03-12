@@ -7,6 +7,6 @@ public class PuffCloud : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<SpriteRenderer>().DOFade(0, 2);       
+        GetComponent<SpriteRenderer>().DOFade(0, 1.8f);       
     }
 }

@@ -10,8 +10,17 @@ public class CameraManagerForMobile : MonoBehaviour
     void Start()
     {
         float aspectRatio = (float)Screen.width / (float)Screen.height;
-        float cameraSize;
-        cameraSize = (1.25f - aspectRatio) * 12.8f;
-        Camera.main.orthographicSize = cameraSize;
+
+        if (aspectRatio < 1.34)
+        {
+            Camera.main.orthographicSize = 8f;
+            transform.position = new Vector3(0, 1.92f, -10);
+        }
+        else
+        {
+            float cameraSize;
+            cameraSize = (1.25f - aspectRatio) * 12.8f;
+            Camera.main.orthographicSize = cameraSize;
+        }
     }
 }

@@ -145,7 +145,7 @@ public class Ammo : MonoBehaviour
                 Destroy(collider, 0.5f);
                 _canGiveDamage = false;
             }
-            if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
+            if (!_hasHitZombie && Timer.Instance.timeLeft > 0 && ammoType != AmmoType.Pencil && ammoType != AmmoType.LunchMoney && ammoType != AmmoType.FidgetSpinner && ammoType != AmmoType.Dodgeball)
             {
                 HitStreakManager.Instance.Reset();
             }
@@ -208,7 +208,7 @@ public class Ammo : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
-            if (!_hasHitZombie && Timer.Instance.timeLeft > 0)
+            if (!_hasHitZombie && Timer.Instance.timeLeft > 0 && ammoType != AmmoType.Pencil && ammoType != AmmoType.LunchMoney && ammoType != AmmoType.FidgetSpinner && ammoType != AmmoType.Dodgeball)
             {
                 HitStreakManager.Instance.Reset();
             }
@@ -250,15 +250,15 @@ public class Ammo : MonoBehaviour
 
         if (ammoType == AmmoType.FidgetSpinner)
         {
-            if (bounces == 0)
-            {
-                Destroy(gameObject);
-            }
             GetComponent<AudioSource>().Play();
             rigidbody2D.velocity = Vector2.zero;
             rigidbody2D.AddTorque(80f);
             rigidbody2D.drag = rigidbody2D.drag = 0.2f;
             rigidbody2D.angularDrag = rigidbody2D.angularDrag = 0.2f;
+            if (bounces == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

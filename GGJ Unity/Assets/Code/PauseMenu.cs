@@ -73,6 +73,7 @@ public class PauseMenu : MonoBehaviour
 
     void Exit()
     {
+        GameSoundManager.Instance.Music.Stop();
         Time.timeScale = 1;
         click.Play();
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
